@@ -20,7 +20,15 @@ defmodule TesterWeb.ScanLive.Index do
      |> assign(:ship_to_contact, "")
      |> assign(:ship_to_address1, "")
      |> assign(:ship_to_address2, "")
-     |> assign(:ship_to_surburb, "")}
+     |> assign(:ship_to_suburb, "")
+     |> assign(:ship_to_locality, "")
+     |> assign(:ship_to_region, "")
+     |> assign(:ship_to_country_code, "")
+     |> assign(:ship_to_postal_code, "")
+     |> assign(:ship_to_phone_number, "")
+     |> assign(:ship_to_geocode, "")
+
+    }
   end
 
   def handle_event("validate", params, socket) do
@@ -42,7 +50,15 @@ defmodule TesterWeb.ScanLive.Index do
      |> assign(:ship_to_contact, params["ship_to_contact"])
      |> assign(:ship_to_address1, params["ship_to_address1"])
      |> assign(:ship_to_address2, params["ship_to_address2"])
-     |> assign(:ship_to_surburb, params["ship_to_surburb"])}
+     |> assign(:ship_to_suburb, params["ship_to_suburb"])
+     |> assign(:ship_to_locality, params["ship_to_locality"])
+     |> assign(:ship_to_region, params["ship_to_region"])
+     |> assign(:ship_to_country_code, params["ship_to_country_code"])
+     |> assign(:ship_to_postal_code, params["ship_to_postal_code"])
+     |> assign(:ship_to_phone_number, params["ship_to_phone_number"])
+     |> assign(:ship_to_geocode, params["ship_to_geocode"])
+
+    }
   end
 
   def handle_event("save", _, socket) do

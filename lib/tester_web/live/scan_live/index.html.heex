@@ -160,15 +160,76 @@
         <div>4303</div>
       </div>
       <div class="flex w-full mb-2 ">
-        <%= label(f, :"ship-to/Deliver-to surburb line 2", class: " bg-[#f7c999] w-[20%]") %>
-        <%= text_input(f, :ship_to_surburb,
-          value: @ship_to_surburb,
+        <%= label(f, :"ship-to/Deliver-to suburb ", class: " bg-[#f7c999] w-[20%]") %>
+        <%= text_input(f, :ship_to_suburb,
+          value: @ship_to_suburb,
           class: " w-[50%]",
           style: "height:20px"
         ) %>
         <%= error_tag(f, :ship_to_surburb) %>
         <div>4304</div>
       </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"ship-to/Deliver-to locality(town/city) ", class: " bg-[#f7c999] w-[20%]") %>
+        <%= text_input(f, :ship_to_locality,
+          value: @ship_to_locality,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :ship_to_surburb) %>
+        <div>4305</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"ship-to/Deliver-to region(state/county) ", class: " bg-[#f7c999] w-[20%]") %>
+        <%= text_input(f, :ship_to_region,
+          value: @ship_to_region,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :ship_to_region) %>
+        <div>4306</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"ship-to/Deliver-to country-code", class: " bg-[#f7c999] w-[20%]") %>
+        <%= text_input(f, :ship_to_country_code,
+          value: @ship_to_country_code,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :ship_to_country_code) %>
+        <div>4307</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"ship-to/Deliver-to postal-code", class: " bg-[#f7c999] w-[20%]") %>
+        <%= text_input(f, :ship_to_postal_code,
+          value: @ship_to_postal_code,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :ship_to_postal_code) %>
+        <div>420</div>
+      </div>
+       <div class="flex w-full mb-2 ">
+        <%= label(f, :"ship-to/Deliver-to phone number", class: " bg-[#f7c999] w-[20%]") %>
+        <%= text_input(f, :ship_to_phone_number,
+          value: @ship_to_phone_number,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :ship_to_phone_number) %>
+        <div>4308</div>
+      </div>
+       <div class="flex w-full mb-2 ">
+        <%= label(f, :"ship-to/Deliver-to geocode", class: " bg-[#f7c999] w-[20%]") %>
+        <%= text_input(f, :ship_to_geocode,
+          value: @ship_to_geocode,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :ship_to_geocode) %>
+        <div>420</div>
+      </div>
+
 
       <div>
         <%= submit("Save", phx_disable_with: "Saving...") %>
@@ -200,7 +261,15 @@
       @ship_to_company <>
       "/" <>
       @ship_to_contact <>
-      "/" <> @ship_to_address1 <> "/" <> @ship_to_address2 <> "/" <> @ship_to_surburb %>
+      "/" <>
+      @ship_to_address1 <>
+      "/" <>
+      @ship_to_address2 <>
+      "/" <>
+      @ship_to_suburb <>
+      "/" <>
+      @ship_to_locality <>
+      "/" <> @ship_to_region <> "/" <> @ship_to_country_code <> "/" <> @ship_to_postal_code<> "/" <> @ship_to_phone_number <> "/" <> @ship_to_geocode %>
   </div>
 
   <div class="  p-4 bg-white ">QRCODE</div>
