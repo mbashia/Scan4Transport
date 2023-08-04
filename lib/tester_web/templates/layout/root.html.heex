@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= csrf_meta_tag() %>
+    <%= live_title_tag(assigns[:page_title] || "Tester", suffix: " · Phoenix Framework") %>
+    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")} />
+    <script
+      defer
+      phx-track-static
+      type="text/javascript"
+      src={Routes.static_path(@conn, "/assets/app.js")}
+    >
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+    </script>
+  </head>
+  <body class="p-[30px]">
+    <%= @inner_content %>
+    <script>
+          var qrcode = new QRCode(document.querySelector(".qrcode"));
+      qrcode.makeCode("Why did you scanned me?");
+      function generateQr() {
+        qrcode.makeCode(document.querySelector(".qrcode").textContent);
+      }
+          
+    </script>
+  </body>
+</html>
