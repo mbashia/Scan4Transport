@@ -91,13 +91,30 @@
         <td><%= scanfortransport.return_to_contact %></td>
 
         <td>
-          <span><%= live_redirect "Show", to: Routes.scanfortransport_show_path(@socket, :show, scanfortransport) %></span>
-          <span><%= live_patch "Edit", to: Routes.scanfortransport_index_path(@socket, :edit, scanfortransport) %></span>
-          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: scanfortransport.id, data: [confirm: "Are you sure?"] %></span>
+          <span>
+            <%= live_redirect("Show",
+              to: Routes.scanfortransport_show_path(@socket, :show, scanfortransport)
+            ) %>
+          </span>
+          <span>
+            <%= live_patch("Edit",
+              to: Routes.scanfortransport_index_path(@socket, :edit, scanfortransport)
+            ) %>
+          </span>
+          <span>
+            <%= link("Delete",
+              to: "#",
+              phx_click: "delete",
+              phx_value_id: scanfortransport.id,
+              data: [confirm: "Are you sure?"]
+            ) %>
+          </span>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<span><%= live_patch "New Scanfortransport", to: Routes.scanfortransport_index_path(@socket, :new) %></span>
+<span>
+  <%= live_patch("New Scanfortransport", to: Routes.scanfortransport_index_path(@socket, :new)) %>
+</span>

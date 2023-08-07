@@ -28,7 +28,10 @@ defmodule TesterWeb.ScanfortransportLive.FormComponent do
   end
 
   defp save_scanfortransport(socket, :edit, scanfortransport_params) do
-    case Scanfortransports.update_scanfortransport(socket.assigns.scanfortransport, scanfortransport_params) do
+    case Scanfortransports.update_scanfortransport(
+           socket.assigns.scanfortransport,
+           scanfortransport_params
+         ) do
       {:ok, _scanfortransport} ->
         {:noreply,
          socket

@@ -14,7 +14,6 @@
 <% end %>
 
 <ul>
-
   <li>
     <strong>Symbol:</strong>
     <%= @scanfortransport.symbol %>
@@ -179,8 +178,13 @@
     <strong>Return to contact:</strong>
     <%= @scanfortransport.return_to_contact %>
   </li>
-
 </ul>
 
-<span><%= live_patch "Edit", to: Routes.scanfortransport_show_path(@socket, :edit, @scanfortransport), class: "button" %></span> |
-<span><%= live_redirect "Back", to: Routes.scanfortransport_index_path(@socket, :index) %></span>
+<span>
+  <%= live_patch("Edit",
+    to: Routes.scanfortransport_show_path(@socket, :edit, @scanfortransport),
+    class: "button"
+  ) %>
+</span>
+|
+<span><%= live_redirect("Back", to: Routes.scanfortransport_index_path(@socket, :index)) %></span>

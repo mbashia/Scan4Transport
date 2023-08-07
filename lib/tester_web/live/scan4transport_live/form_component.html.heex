@@ -7,142 +7,142 @@
     id="scan4transport-form"
     phx-target={@myself}
     phx-change="validate"
-    phx-submit="save">
-  
-    <%= label f, :symbol %>
-    <%= text_input f, :symbol %>
-    <%= error_tag f, :symbol %>
-  
-    <%= label f, :sscc %>
-    <%= number_input f, :sscc %>
-    <%= error_tag f, :sscc %>
-  
-    <%= label f, :uri %>
-    <%= text_input f, :uri %>
-    <%= error_tag f, :uri %>
-  
-    <%= label f, :gnic %>
-    <%= number_input f, :gnic %>
-    <%= error_tag f, :gnic %>
-  
-    <%= label f, :grai %>
-    <%= number_input f, :grai %>
-    <%= error_tag f, :grai %>
-  
-    <%= label f, :gsin %>
-    <%= number_input f, :gsin %>
-    <%= error_tag f, :gsin %>
-  
-    <%= label f, :routing_code %>
-    <%= number_input f, :routing_code %>
-    <%= error_tag f, :routing_code %>
-  
-    <%= label f, :to_gln %>
-    <%= number_input f, :to_gln %>
-    <%= error_tag f, :to_gln %>
-  
-    <%= label f, :for_gln %>
-    <%= number_input f, :for_gln %>
-    <%= error_tag f, :for_gln %>
-  
-    <%= label f, :service_code_desc %>
-    <%= text_input f, :service_code_desc %>
-    <%= error_tag f, :service_code_desc %>
-  
-    <%= label f, :dangerous_goods_flag %>
-    <%= text_input f, :dangerous_goods_flag %>
-    <%= error_tag f, :dangerous_goods_flag %>
-  
-    <%= label f, :ship_to_address %>
-    <%= text_input f, :ship_to_address %>
-    <%= error_tag f, :ship_to_address %>
-  
-    <%= label f, :ship_to_company %>
-    <%= text_input f, :ship_to_company %>
-    <%= error_tag f, :ship_to_company %>
-  
-    <%= label f, :ship_to_contact %>
-    <%= text_input f, :ship_to_contact %>
-    <%= error_tag f, :ship_to_contact %>
-  
-    <%= label f, :ship_to_address1 %>
-    <%= text_input f, :ship_to_address1 %>
-    <%= error_tag f, :ship_to_address1 %>
-  
-    <%= label f, :ship_to_address2 %>
-    <%= text_input f, :ship_to_address2 %>
-    <%= error_tag f, :ship_to_address2 %>
-  
-    <%= label f, :ship_to_surburb %>
-    <%= text_input f, :ship_to_surburb %>
-    <%= error_tag f, :ship_to_surburb %>
-  
-    <%= label f, :ship_to_locality %>
-    <%= text_input f, :ship_to_locality %>
-    <%= error_tag f, :ship_to_locality %>
-  
-    <%= label f, :ship_to_region %>
-    <%= text_input f, :ship_to_region %>
-    <%= error_tag f, :ship_to_region %>
-  
-    <%= label f, :ship_to_country_code %>
-    <%= text_input f, :ship_to_country_code %>
-    <%= error_tag f, :ship_to_country_code %>
-  
-    <%= label f, :ship_to_postal_code %>
-    <%= number_input f, :ship_to_postal_code %>
-    <%= error_tag f, :ship_to_postal_code %>
-  
-    <%= label f, :ship_to_phone_number %>
-    <%= number_input f, :ship_to_phone_number %>
-    <%= error_tag f, :ship_to_phone_number %>
-  
-    <%= label f, :ship_to_geocode %>
-    <%= number_input f, :ship_to_geocode %>
-    <%= error_tag f, :ship_to_geocode %>
-  
-    <%= label f, :latitude %>
-    <%= number_input f, :latitude, step: "any" %>
-    <%= error_tag f, :latitude %>
-  
-    <%= label f, :longitude %>
-    <%= number_input f, :longitude, step: "any" %>
-    <%= error_tag f, :longitude %>
-  
-    <%= label f, :authority_to_leave %>
-    <%= text_input f, :authority_to_leave %>
-    <%= error_tag f, :authority_to_leave %>
-  
-    <%= label f, :signature_flag %>
-    <%= text_input f, :signature_flag %>
-    <%= error_tag f, :signature_flag %>
-  
-    <%= label f, :before_delivery_date %>
-    <%= date_select f, :before_delivery_date %>
-    <%= error_tag f, :before_delivery_date %>
-  
-    <%= label f, :not_after_delivery_date %>
-    <%= date_select f, :not_after_delivery_date %>
-    <%= error_tag f, :not_after_delivery_date %>
-  
-    <%= label f, :release_data %>
-    <%= text_input f, :release_data %>
-    <%= error_tag f, :release_data %>
-  
-    <%= label f, :return_to_address %>
-    <%= text_input f, :return_to_address %>
-    <%= error_tag f, :return_to_address %>
-  
-    <%= label f, :return_to_company %>
-    <%= text_input f, :return_to_company %>
-    <%= error_tag f, :return_to_company %>
-  
-    <%= label f, :return_to_contact %>
-    <%= text_input f, :return_to_contact %>
-    <%= error_tag f, :return_to_contact %>
-  
+    phx-submit="save"
+  >
+    <%= label(f, :symbol) %>
+    <%= text_input(f, :symbol) %>
+    <%= error_tag(f, :symbol) %>
+
+    <%= label(f, :sscc) %>
+    <%= number_input(f, :sscc) %>
+    <%= error_tag(f, :sscc) %>
+
+    <%= label(f, :uri) %>
+    <%= text_input(f, :uri) %>
+    <%= error_tag(f, :uri) %>
+
+    <%= label(f, :gnic) %>
+    <%= number_input(f, :gnic) %>
+    <%= error_tag(f, :gnic) %>
+
+    <%= label(f, :grai) %>
+    <%= number_input(f, :grai) %>
+    <%= error_tag(f, :grai) %>
+
+    <%= label(f, :gsin) %>
+    <%= number_input(f, :gsin) %>
+    <%= error_tag(f, :gsin) %>
+
+    <%= label(f, :routing_code) %>
+    <%= number_input(f, :routing_code) %>
+    <%= error_tag(f, :routing_code) %>
+
+    <%= label(f, :to_gln) %>
+    <%= number_input(f, :to_gln) %>
+    <%= error_tag(f, :to_gln) %>
+
+    <%= label(f, :for_gln) %>
+    <%= number_input(f, :for_gln) %>
+    <%= error_tag(f, :for_gln) %>
+
+    <%= label(f, :service_code_desc) %>
+    <%= text_input(f, :service_code_desc) %>
+    <%= error_tag(f, :service_code_desc) %>
+
+    <%= label(f, :dangerous_goods_flag) %>
+    <%= text_input(f, :dangerous_goods_flag) %>
+    <%= error_tag(f, :dangerous_goods_flag) %>
+
+    <%= label(f, :ship_to_address) %>
+    <%= text_input(f, :ship_to_address) %>
+    <%= error_tag(f, :ship_to_address) %>
+
+    <%= label(f, :ship_to_company) %>
+    <%= text_input(f, :ship_to_company) %>
+    <%= error_tag(f, :ship_to_company) %>
+
+    <%= label(f, :ship_to_contact) %>
+    <%= text_input(f, :ship_to_contact) %>
+    <%= error_tag(f, :ship_to_contact) %>
+
+    <%= label(f, :ship_to_address1) %>
+    <%= text_input(f, :ship_to_address1) %>
+    <%= error_tag(f, :ship_to_address1) %>
+
+    <%= label(f, :ship_to_address2) %>
+    <%= text_input(f, :ship_to_address2) %>
+    <%= error_tag(f, :ship_to_address2) %>
+
+    <%= label(f, :ship_to_surburb) %>
+    <%= text_input(f, :ship_to_surburb) %>
+    <%= error_tag(f, :ship_to_surburb) %>
+
+    <%= label(f, :ship_to_locality) %>
+    <%= text_input(f, :ship_to_locality) %>
+    <%= error_tag(f, :ship_to_locality) %>
+
+    <%= label(f, :ship_to_region) %>
+    <%= text_input(f, :ship_to_region) %>
+    <%= error_tag(f, :ship_to_region) %>
+
+    <%= label(f, :ship_to_country_code) %>
+    <%= text_input(f, :ship_to_country_code) %>
+    <%= error_tag(f, :ship_to_country_code) %>
+
+    <%= label(f, :ship_to_postal_code) %>
+    <%= number_input(f, :ship_to_postal_code) %>
+    <%= error_tag(f, :ship_to_postal_code) %>
+
+    <%= label(f, :ship_to_phone_number) %>
+    <%= number_input(f, :ship_to_phone_number) %>
+    <%= error_tag(f, :ship_to_phone_number) %>
+
+    <%= label(f, :ship_to_geocode) %>
+    <%= number_input(f, :ship_to_geocode) %>
+    <%= error_tag(f, :ship_to_geocode) %>
+
+    <%= label(f, :latitude) %>
+    <%= number_input(f, :latitude, step: "any") %>
+    <%= error_tag(f, :latitude) %>
+
+    <%= label(f, :longitude) %>
+    <%= number_input(f, :longitude, step: "any") %>
+    <%= error_tag(f, :longitude) %>
+
+    <%= label(f, :authority_to_leave) %>
+    <%= text_input(f, :authority_to_leave) %>
+    <%= error_tag(f, :authority_to_leave) %>
+
+    <%= label(f, :signature_flag) %>
+    <%= text_input(f, :signature_flag) %>
+    <%= error_tag(f, :signature_flag) %>
+
+    <%= label(f, :before_delivery_date) %>
+    <%= date_select(f, :before_delivery_date) %>
+    <%= error_tag(f, :before_delivery_date) %>
+
+    <%= label(f, :not_after_delivery_date) %>
+    <%= date_select(f, :not_after_delivery_date) %>
+    <%= error_tag(f, :not_after_delivery_date) %>
+
+    <%= label(f, :release_data) %>
+    <%= text_input(f, :release_data) %>
+    <%= error_tag(f, :release_data) %>
+
+    <%= label(f, :return_to_address) %>
+    <%= text_input(f, :return_to_address) %>
+    <%= error_tag(f, :return_to_address) %>
+
+    <%= label(f, :return_to_company) %>
+    <%= text_input(f, :return_to_company) %>
+    <%= error_tag(f, :return_to_company) %>
+
+    <%= label(f, :return_to_contact) %>
+    <%= text_input(f, :return_to_contact) %>
+    <%= error_tag(f, :return_to_contact) %>
+
     <div>
-      <%= submit "Save", phx_disable_with: "Saving..." %>
+      <%= submit("Save", phx_disable_with: "Saving...") %>
     </div>
   </.form>
 </div>

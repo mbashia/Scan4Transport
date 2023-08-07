@@ -1,12 +1,12 @@
 <div class="text-center font-bold text-2xl">
   <h2>GS1 Scan4Transport Interactive Demo</h2>
 </div>
-<div class="main-div flex flex-row gap-4">
+<div class="main-div flex flex-row gap-2">
   <div class="flex flex-col flex-no-wrap w-[60%]">
-    <.form let={f} for={@changeset} phx-change="validate" phx-submit="save" >
+    <.form let={f} for={@changeset} phx-change="validate" phx-submit="save">
       <div class="w-[70%] mb-1 text-center text-white bg-[#1c489A]">ENCODE/GENERATE</div>
 
-      <div class="flex w-full mb-2 ">
+      <div class="flex  w-full mb-2 ">
         <%= label(f, :"choose 2D symbol", class: " bg-[#f7c999] w-[20%]") %>
         <%= select(
           f,
@@ -232,29 +232,30 @@
       <div class="flex w-full mb-2">
         <button>show map</button>
         <div>
-        <div>
-         <div class="flex w-full mb-2 ">
-        <%= label(f, :"WGS84 Latitude", class: " bg-[#f7c999] w-[20%]") %>
-        <%= text_input(f, :latitude,
-          value: @latitude,
-          class: " w-[50%]",
-          style: "height:20px"
-        ) %>
-        <%= error_tag(f, :latitude) %>
-        <div></div>
-      </div>
-        </div>
-        <div>
-         <div class="flex w-full mb-2 ">
-        <%= label(f, :"WGS84 Longitude", class: " bg-[#f7c999] w-[20%]") %>
-        <%= text_input(f, :longitude,
-          value: @longitude,
-          class: " w-[50%]",
-          style: "height:20px"
-        ) %>
-        <%= error_tag(f, :longitude) %>
-        <div></div>
-      </div></div>
+          <div>
+            <div class="flex w-full mb-2 ">
+              <%= label(f, :"WGS84 Latitude", class: " bg-[#f7c999] w-[20%]") %>
+              <%= text_input(f, :latitude,
+                value: @latitude,
+                class: " w-[50%]",
+                style: "height:20px"
+              ) %>
+              <%= error_tag(f, :latitude) %>
+              <div></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex w-full mb-2 ">
+              <%= label(f, :"WGS84 Longitude", class: " bg-[#f7c999] w-[20%]") %>
+              <%= text_input(f, :longitude,
+                value: @longitude,
+                class: " w-[50%]",
+                style: "height:20px"
+              ) %>
+              <%= error_tag(f, :longitude) %>
+              <div></div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="flex w-full mb-2 ">
@@ -487,85 +488,88 @@
       </div>
     </.form>
   </div>
+  <div class="border w-[40%]">
+  <div class = "text-center border-solid border-2 border-black text-blue-500">DECODE</div>
+    <div class="qrcode whitespace-normal h-[7%] mb-2 text-sm border h break-words p-4 align-center overflow-y-auto " id="qrtext" >
 
-  <div class="qrcode ">
-    <%= @url <>
-      "" <>
-      @sscc <>
-      "" <>
-      @gnic <>
-      "" <>
-      @gsin <>
-      "" <>
-      @grai <>
-      "" <>
-      @routing_code <>
-      "" <>
-      @to_gln <>
-      "" <>
-      @for_gln <>
-      "" <>
-      @service_code_desc <>
-      "" <>
-      @dangerous_goods_flag <>
-      "" <>
-      @ship_to_company <>
-      "" <>
-      @ship_to_contact <>
-      "" <>
-      @ship_to_address1 <>
-      "" <>
-      @ship_to_address2 <>
-      "" <>
-      @ship_to_suburb <>
-      "" <>
-      @ship_to_locality <>
-      "" <>
-      @ship_to_region <>
-      "" <>
-      @ship_to_country_code <>
-      "" <>
-      @ship_to_postal_code <>
-      "" <>
-      @ship_to_phone_number <>
-      "" <>
-      @ship_to_geocode <>
-      "" <>
-      @authority_to_leave <>
-      "" <>
-      @signature_flag <>
-      "" <>
-      @before_delivery_date <>
-      "" <>
-      @not_after_delivery_date <>
-      "" <>
-      @release_date <>
-      "" <>
-      @return_to_company <>
-      "" <>
-      @return_to_contact <>
-      "" <>
-      @return_to_address1 <>
-      "" <>
-      @return_to_address2 <>
-      "" <>
-      @return_to_surburb <>
-      "" <>
-      @return_to_locality <>
-      "" <>
-      @return_to_region <>
-      "" <>
-      @return_to_country_code <>
-      "" <>
-      @return_to_postal_code <>
-      "" <>
-      @return_to_phone_number <>
-      "" <>
-      @logistic_weight <>
-      "" <>
-      @length_first_dimension <>
-      "" <> @width_second_dimension <> "" <> @depth_thickness_height <> "" <> @logistic_volume %>
+      <%= @url <>
+        "" <>
+        @sscc <>
+        "" <>
+        @gnic <>
+        "" <>
+        @gsin <>
+        "" <>
+        @grai <>
+        "" <>
+        @routing_code <>
+        "" <>
+        @to_gln <>
+        "" <>
+        @for_gln <>
+        "" <>
+        @service_code_desc <>
+        "" <>
+        @dangerous_goods_flag <>
+        "" <>
+        @ship_to_company <>
+        "" <>
+        @ship_to_contact <>
+        "" <>
+        @ship_to_address1 <>
+        "" <>
+        @ship_to_address2 <>
+        "" <>
+        @ship_to_suburb <>
+        "" <>
+        @ship_to_locality <>
+        "" <>
+        @ship_to_region <>
+        "" <>
+        @ship_to_country_code <>
+        "" <>
+        @ship_to_postal_code <>
+        "" <>
+        @ship_to_phone_number <>
+        "" <>
+        @ship_to_geocode <>
+        "" <>
+        @authority_to_leave <>
+        "" <>
+        @signature_flag <>
+        "" <>
+        @before_delivery_date <>
+        "" <>
+        @not_after_delivery_date <>
+        "" <>
+        @release_date <>
+        "" <>
+        @return_to_company <>
+        "" <>
+        @return_to_contact <>
+        "" <>
+        @return_to_address1 <>
+        "" <>
+        @return_to_address2 <>
+        "" <>
+        @return_to_surburb <>
+        "" <>
+        @return_to_locality <>
+        "" <>
+        @return_to_region <>
+        "" <>
+        @return_to_country_code <>
+        "" <>
+        @return_to_postal_code <>
+        "" <>
+        @return_to_phone_number <>
+        "" <>
+        @logistic_weight <>
+        "" <>
+        @length_first_dimension <>
+        "" <> @width_second_dimension <> "" <> @depth_thickness_height <> "" <> @logistic_volume %>
+    </div>
+
+    <div class = "h-[200px] w-[200px] ml-[25%] mt-[20%]" id= "qr" phx-hook="qrcode"></div>
   </div>
-
-  <div class="  p-4 border bg-white flex flex-wrap">QRCODE</div>
 </div>

@@ -4,11 +4,10 @@ defmodule TesterWeb.ScanLive.Index do
   alias Tester.Scan4transports.Scan4transport
 
   def mount(params, _session, socket) do
-
     {:ok,
      socket
      |> assign(:changeset, Scan4transport.changeset(%Scan4transport{}, %{}))
-     |> assign(:url, "http://example.com/")
+     |> assign(:url, "http://example.com")
      |> assign(:sscc, "")
      |> assign(:gnic, "")
      |> assign(:symbol, "")
@@ -58,7 +57,7 @@ defmodule TesterWeb.ScanLive.Index do
 
   def handle_event("validate", params, socket) do
     IO.inspect(params)
-
+    
 
     {:noreply,
      socket
@@ -104,16 +103,14 @@ defmodule TesterWeb.ScanLive.Index do
      |> assign(:depth_thickness_height, params["scan4transport"]["depth_thickness_height"])
      |> assign(:logistic_volume, params["scan4transport"]["logistic_volume"])
      |> assign(:latitude, params["scan4transport"]["latitude"])
-     |> assign(:longitude, params["scan4transport"]["longitude"])
-
-
-    }
+     |> assign(:longitude, params["scan4transport"]["longitude"])}
   end
 
   def handle_event("save", _, socket) do
     {:noreply, socket}
   end
 end
+
 # sscc = params["scan4transport"]["sscc"]
 # gnic = params["scan4transport"]["gnic"]
 # symbol = params["scan4transport"]["symbol"]
