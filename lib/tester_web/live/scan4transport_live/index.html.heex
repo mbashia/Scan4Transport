@@ -1,0 +1,103 @@
+<h1>Listing Scan4transports</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <.modal return_to={Routes.scan4transport_index_path(@socket, :index)}>
+    <.live_component
+      module={TesterWeb.Scan4transportLive.FormComponent}
+      id={@scan4transport.id || :new}
+      title={@page_title}
+      action={@live_action}
+      scan4transport={@scan4transport}
+      return_to={Routes.scan4transport_index_path(@socket, :index)}
+    />
+  </.modal>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Sscc</th>
+      <th>Uri</th>
+      <th>Gnic</th>
+      <th>Grai</th>
+      <th>Gsin</th>
+      <th>Routing code</th>
+      <th>To gln</th>
+      <th>For gln</th>
+      <th>Service code desc</th>
+      <th>Dangerous goods flag</th>
+      <th>Ship to address</th>
+      <th>Ship to company</th>
+      <th>Ship to contact</th>
+      <th>Ship to address1</th>
+      <th>Ship to address2</th>
+      <th>Ship to surburb</th>
+      <th>Ship to locality</th>
+      <th>Ship to region</th>
+      <th>Ship to country code</th>
+      <th>Ship to postal code</th>
+      <th>Ship to phone number</th>
+      <th>Ship to geocode</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Authority to leave</th>
+      <th>Signature flag</th>
+      <th>Before delivery date</th>
+      <th>Not after delivery date</th>
+      <th>Release data</th>
+      <th>Return to address</th>
+      <th>Return to company</th>
+      <th>Return to contact</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="scan4transports">
+    <%= for scan4transport <- @scan4transports do %>
+      <tr id={"scan4transport-#{scan4transport.id}"}>
+        <td><%= scan4transport.symbol %></td>
+        <td><%= scan4transport.sscc %></td>
+        <td><%= scan4transport.uri %></td>
+        <td><%= scan4transport.gnic %></td>
+        <td><%= scan4transport.grai %></td>
+        <td><%= scan4transport.gsin %></td>
+        <td><%= scan4transport.routing_code %></td>
+        <td><%= scan4transport.to_gln %></td>
+        <td><%= scan4transport.for_gln %></td>
+        <td><%= scan4transport.service_code_desc %></td>
+        <td><%= scan4transport.dangerous_goods_flag %></td>
+        <td><%= scan4transport.ship_to_address %></td>
+        <td><%= scan4transport.ship_to_company %></td>
+        <td><%= scan4transport.ship_to_contact %></td>
+        <td><%= scan4transport.ship_to_address1 %></td>
+        <td><%= scan4transport.ship_to_address2 %></td>
+        <td><%= scan4transport.ship_to_surburb %></td>
+        <td><%= scan4transport.ship_to_locality %></td>
+        <td><%= scan4transport.ship_to_region %></td>
+        <td><%= scan4transport.ship_to_country_code %></td>
+        <td><%= scan4transport.ship_to_postal_code %></td>
+        <td><%= scan4transport.ship_to_phone_number %></td>
+        <td><%= scan4transport.ship_to_geocode %></td>
+        <td><%= scan4transport.latitude %></td>
+        <td><%= scan4transport.longitude %></td>
+        <td><%= scan4transport.authority_to_leave %></td>
+        <td><%= scan4transport.signature_flag %></td>
+        <td><%= scan4transport.before_delivery_date %></td>
+        <td><%= scan4transport.not_after_delivery_date %></td>
+        <td><%= scan4transport.release_data %></td>
+        <td><%= scan4transport.return_to_address %></td>
+        <td><%= scan4transport.return_to_company %></td>
+        <td><%= scan4transport.return_to_contact %></td>
+
+        <td>
+          <span><%= live_redirect "Show", to: Routes.scan4transport_show_path(@socket, :show, scan4transport) %></span>
+          <span><%= live_patch "Edit", to: Routes.scan4transport_index_path(@socket, :edit, scan4transport) %></span>
+          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: scan4transport.id, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%= live_patch "New Scan4transport", to: Routes.scan4transport_index_path(@socket, :new) %></span>

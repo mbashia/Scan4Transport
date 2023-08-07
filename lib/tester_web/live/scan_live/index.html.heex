@@ -3,7 +3,7 @@
 </div>
 <div class="main-div flex flex-row gap-4">
   <div class="flex flex-col flex-no-wrap w-[60%]">
-    <.form let={f} for={@changeset} phx-change="validate" phx-submit="save">
+    <.form let={f} for={@changeset} phx-change="validate" phx-submit="save" >
       <div class="w-[70%] mb-1 text-center text-white bg-[#1c489A]">ENCODE/GENERATE</div>
 
       <div class="flex w-full mb-2 ">
@@ -176,7 +176,7 @@
           class: " w-[50%]",
           style: "height:20px"
         ) %>
-        <%= error_tag(f, :ship_to_surburb) %>
+        <%= error_tag(f, :ship_to_locality) %>
         <div>4305</div>
       </div>
       <div class="flex w-full mb-2 ">
@@ -209,7 +209,7 @@
         <%= error_tag(f, :ship_to_postal_code) %>
         <div>420</div>
       </div>
-       <div class="flex w-full mb-2 ">
+      <div class="flex w-full mb-2 ">
         <%= label(f, :"ship-to/Deliver-to phone number", class: " bg-[#f7c999] w-[20%]") %>
         <%= text_input(f, :ship_to_phone_number,
           value: @ship_to_phone_number,
@@ -219,7 +219,7 @@
         <%= error_tag(f, :ship_to_phone_number) %>
         <div>4308</div>
       </div>
-       <div class="flex w-full mb-2 ">
+      <div class="flex w-full mb-2 ">
         <%= label(f, :"ship-to/Deliver-to geocode", class: " bg-[#f7c999] w-[20%]") %>
         <%= text_input(f, :ship_to_geocode,
           value: @ship_to_geocode,
@@ -227,9 +227,260 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :ship_to_geocode) %>
-        <div>420</div>
+        <div>4309</div>
+      </div>
+      <div class="flex w-full mb-2">
+        <button>show map</button>
+        <div>
+        <div>
+         <div class="flex w-full mb-2 ">
+        <%= label(f, :"WGS84 Latitude", class: " bg-[#f7c999] w-[20%]") %>
+        <%= text_input(f, :latitude,
+          value: @latitude,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :latitude) %>
+        <div></div>
+      </div>
+        </div>
+        <div>
+         <div class="flex w-full mb-2 ">
+        <%= label(f, :"WGS84 Longitude", class: " bg-[#f7c999] w-[20%]") %>
+        <%= text_input(f, :longitude,
+          value: @longitude,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :longitude) %>
+        <div></div>
+      </div></div>
+        </div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"authority to leave", class: " bg-[#c9f4cb] w-[20%]") %>
+        <%= select(f, :authority_to_leave, ["yes", "no"],
+          prompt: "select type",
+          class: " w-[50%] text-black",
+          style: "height:40px; ",
+          value: @authority_to_leave
+        ) %>
+        <%= error_tag(f, :authority_to_leave) %>
+        <div>4322</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"signature required flag", class: " bg-[#c9f4cb] w-[20%]") %>
+        <%= select(f, :signature_flag, ["yes", "no"],
+          prompt: "select type",
+          class: " w-[50%] text-black",
+          style: "height:40px; ",
+          value: @signature_flag
+        ) %>
+        <%= error_tag(f, :signature_flag) %>
+        <div>4323</div>
       </div>
 
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"not before delivery date", class: " bg-[#c9f4cb] w-[20%]") %>
+        <%= date_input(f, :before_delivery_date,
+          value: @before_delivery_date,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :before_delivery_date) %>
+        <div>4324</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"not after delivery date", class: " bg-[#c9f4cb] w-[20%]") %>
+        <%= date_input(f, :not_after_delivery_date,
+          value: @not_after_delivery_date,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :not_after_delivery_date) %>
+        <div>4325</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"release date", class: " bg-[#c9f4cb] w-[20%]") %>
+        <%= date_input(f, :release_date,
+          value: @release_date,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :release_date) %>
+        <div>4326</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"return address", class: "bg-[#CCCCFD] w-[20%]") %>
+        <%= select(
+          f,
+          :return_address,
+          [
+            "clear the shipping address demo",
+            "JP-GS1 Japan",
+            "FR-GS1 France",
+            "FR-Transport Lambolley",
+            "IE-GS1 Irelan",
+            "US-GS1",
+            "AU-GS1 Australia",
+            "BR-GS1 Brasil "
+          ],
+          prompt: "pull down to select a demo value",
+          class: " w-[50%] text-black",
+          style: "height:40px; "
+        ) %>
+        <%= error_tag(f, :return_address) %>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"return to company name", class: " bg-[#CCCCFD] w-[20%]") %>
+        <%= text_input(f, :return_to_company,
+          value: @return_to_company,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :return_to_company) %>
+        <div>4310</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"return to contact", class: " bg-[#CCCCFD] w-[20%]") %>
+        <%= text_input(f, :return_to_contact,
+          value: @return_to_contact,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :return_to_contact) %>
+        <div>4311</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"return to address line 1", class: " bg-[#CCCCFD] w-[20%]") %>
+        <%= text_input(f, :return_to_address1,
+          value: @return_to_address1,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :return_to_address1) %>
+        <div>4312</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"return to address line 2", class: " bg-[#CCCCFD] w-[20%]") %>
+        <%= text_input(f, :return_to_address2,
+          value: @return_to_address2,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :return_to_address2) %>
+        <div>4313</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"return to suburb", class: " bg-[#CCCCFD] w-[20%]") %>
+        <%= text_input(f, :return_to_surburb,
+          value: @return_to_surburb,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :return_to_surburb) %>
+        <div>4314</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"return to locality(Town/city)", class: " bg-[#CCCCFD] w-[20%]") %>
+        <%= text_input(f, :return_to_locality,
+          value: @return_to_locality,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :return_to_locality) %>
+        <div>4315</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"return to region(state/county)", class: " bg-[#CCCCFD] w-[20%]") %>
+        <%= text_input(f, :return_to_region,
+          value: @return_to_region,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :return_to_region) %>
+        <div>4316</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"return to country code", class: " bg-[#CCCCFD] w-[20%]") %>
+        <%= text_input(f, :return_to_country_code,
+          value: @return_to_country_code,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :return_to_country_code) %>
+        <div>4317</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"return to postal_code", class: " bg-[#CCCCFD] w-[20%]") %>
+        <%= text_input(f, :return_to_postal_code,
+          value: @return_to_postal_code,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :return_to_postal_code) %>
+        <div>4318</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"return to phone number", class: " bg-[#CCCCFD] w-[20%]") %>
+        <%= text_input(f, :return_to_phone_number,
+          value: @return_to_phone_number,
+          class: " w-[50%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :return_to_phone_number) %>
+        <div>4319</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"logistic weight(kg)", class: " bg-[#D9D9D9] w-[20%]") %>
+        <%= text_input(f, :logistic_weight,
+          value: @logistic_weight,
+          class: " w-[30%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :logistic_weight) %>
+        <div>330n</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"length of first dimension(m)", class: " bg-[#D9D9D9] w-[20%]") %>
+        <%= text_input(f, :length_first_dimension,
+          value: @length_first_dimension,
+          class: " w-[30%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :length_first_dimension) %>
+        <div>331n</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"width of second dimension(m)", class: " bg-[#D9D9D9] w-[20%]") %>
+        <%= text_input(f, :width_second_dimension,
+          value: @width_second_dimension,
+          class: " w-[30%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :width_second_dimension) %>
+        <div>332n</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"Depth,thickness, height(m)", class: " bg-[#D9D9D9] w-[20%]") %>
+        <%= text_input(f, :depth_thickness_height,
+          value: @depth_thickness_height,
+          class: " w-[30%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :depth_thickness_height) %>
+        <div>333n</div>
+      </div>
+      <div class="flex w-full mb-2 ">
+        <%= label(f, :"logistic volume (cubic metres)", class: " bg-[#D9D9D9] w-[20%]") %>
+        <%= text_input(f, :logistic_volume,
+          value: @logistic_volume,
+          class: " w-[30%]",
+          style: "height:20px"
+        ) %>
+        <%= error_tag(f, :logistic_volume) %>
+        <div>336n</div>
+      </div>
 
       <div>
         <%= submit("Save", phx_disable_with: "Saving...") %>
@@ -237,40 +488,84 @@
     </.form>
   </div>
 
-  <div class="qrcode">
+  <div class="qrcode ">
     <%= @url <>
-      "/" <>
+      "" <>
       @sscc <>
-      "/" <>
+      "" <>
       @gnic <>
-      "/" <>
+      "" <>
       @gsin <>
-      "/" <>
+      "" <>
       @grai <>
-      "/" <>
+      "" <>
       @routing_code <>
-      "/" <>
+      "" <>
       @to_gln <>
-      "/" <>
+      "" <>
       @for_gln <>
-      "/" <>
+      "" <>
       @service_code_desc <>
-      "/" <>
+      "" <>
       @dangerous_goods_flag <>
-      "/" <>
+      "" <>
       @ship_to_company <>
-      "/" <>
+      "" <>
       @ship_to_contact <>
-      "/" <>
+      "" <>
       @ship_to_address1 <>
-      "/" <>
+      "" <>
       @ship_to_address2 <>
-      "/" <>
+      "" <>
       @ship_to_suburb <>
-      "/" <>
+      "" <>
       @ship_to_locality <>
-      "/" <> @ship_to_region <> "/" <> @ship_to_country_code <> "/" <> @ship_to_postal_code<> "/" <> @ship_to_phone_number <> "/" <> @ship_to_geocode %>
+      "" <>
+      @ship_to_region <>
+      "" <>
+      @ship_to_country_code <>
+      "" <>
+      @ship_to_postal_code <>
+      "" <>
+      @ship_to_phone_number <>
+      "" <>
+      @ship_to_geocode <>
+      "" <>
+      @authority_to_leave <>
+      "" <>
+      @signature_flag <>
+      "" <>
+      @before_delivery_date <>
+      "" <>
+      @not_after_delivery_date <>
+      "" <>
+      @release_date <>
+      "" <>
+      @return_to_company <>
+      "" <>
+      @return_to_contact <>
+      "" <>
+      @return_to_address1 <>
+      "" <>
+      @return_to_address2 <>
+      "" <>
+      @return_to_surburb <>
+      "" <>
+      @return_to_locality <>
+      "" <>
+      @return_to_region <>
+      "" <>
+      @return_to_country_code <>
+      "" <>
+      @return_to_postal_code <>
+      "" <>
+      @return_to_phone_number <>
+      "" <>
+      @logistic_weight <>
+      "" <>
+      @length_first_dimension <>
+      "" <> @width_second_dimension <> "" <> @depth_thickness_height <> "" <> @logistic_volume %>
   </div>
 
-  <div class="  p-4 bg-white ">QRCODE</div>
+  <div class="  p-4 border bg-white flex flex-wrap">QRCODE</div>
 </div>

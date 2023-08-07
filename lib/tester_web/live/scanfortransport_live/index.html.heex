@@ -1,0 +1,103 @@
+<h1>Listing Scanfortransports</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <.modal return_to={Routes.scanfortransport_index_path(@socket, :index)}>
+    <.live_component
+      module={TesterWeb.ScanfortransportLive.FormComponent}
+      id={@scanfortransport.id || :new}
+      title={@page_title}
+      action={@live_action}
+      scanfortransport={@scanfortransport}
+      return_to={Routes.scanfortransport_index_path(@socket, :index)}
+    />
+  </.modal>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Sscc</th>
+      <th>Uri</th>
+      <th>Gnic</th>
+      <th>Grai</th>
+      <th>Gsin</th>
+      <th>Routing code</th>
+      <th>To gln</th>
+      <th>For gln</th>
+      <th>Service code desc</th>
+      <th>Dangerous goods flag</th>
+      <th>Ship to address</th>
+      <th>Ship to company</th>
+      <th>Ship to contact</th>
+      <th>Ship to address1</th>
+      <th>Ship to address2</th>
+      <th>Ship to surburb</th>
+      <th>Ship to locality</th>
+      <th>Ship to region</th>
+      <th>Ship to country code</th>
+      <th>Ship to postal code</th>
+      <th>Ship to phone number</th>
+      <th>Ship to geocode</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Authority to leave</th>
+      <th>Signature flag</th>
+      <th>Before delivery date</th>
+      <th>Not after delivery date</th>
+      <th>Release data</th>
+      <th>Return to address</th>
+      <th>Return to company</th>
+      <th>Return to contact</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="scanfortransports">
+    <%= for scanfortransport <- @scanfortransports do %>
+      <tr id={"scanfortransport-#{scanfortransport.id}"}>
+        <td><%= scanfortransport.symbol %></td>
+        <td><%= scanfortransport.sscc %></td>
+        <td><%= scanfortransport.uri %></td>
+        <td><%= scanfortransport.gnic %></td>
+        <td><%= scanfortransport.grai %></td>
+        <td><%= scanfortransport.gsin %></td>
+        <td><%= scanfortransport.routing_code %></td>
+        <td><%= scanfortransport.to_gln %></td>
+        <td><%= scanfortransport.for_gln %></td>
+        <td><%= scanfortransport.service_code_desc %></td>
+        <td><%= scanfortransport.dangerous_goods_flag %></td>
+        <td><%= scanfortransport.ship_to_address %></td>
+        <td><%= scanfortransport.ship_to_company %></td>
+        <td><%= scanfortransport.ship_to_contact %></td>
+        <td><%= scanfortransport.ship_to_address1 %></td>
+        <td><%= scanfortransport.ship_to_address2 %></td>
+        <td><%= scanfortransport.ship_to_surburb %></td>
+        <td><%= scanfortransport.ship_to_locality %></td>
+        <td><%= scanfortransport.ship_to_region %></td>
+        <td><%= scanfortransport.ship_to_country_code %></td>
+        <td><%= scanfortransport.ship_to_postal_code %></td>
+        <td><%= scanfortransport.ship_to_phone_number %></td>
+        <td><%= scanfortransport.ship_to_geocode %></td>
+        <td><%= scanfortransport.latitude %></td>
+        <td><%= scanfortransport.longitude %></td>
+        <td><%= scanfortransport.authority_to_leave %></td>
+        <td><%= scanfortransport.signature_flag %></td>
+        <td><%= scanfortransport.before_delivery_date %></td>
+        <td><%= scanfortransport.not_after_delivery_date %></td>
+        <td><%= scanfortransport.release_data %></td>
+        <td><%= scanfortransport.return_to_address %></td>
+        <td><%= scanfortransport.return_to_company %></td>
+        <td><%= scanfortransport.return_to_contact %></td>
+
+        <td>
+          <span><%= live_redirect "Show", to: Routes.scanfortransport_show_path(@socket, :show, scanfortransport) %></span>
+          <span><%= live_patch "Edit", to: Routes.scanfortransport_index_path(@socket, :edit, scanfortransport) %></span>
+          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: scanfortransport.id, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%= live_patch "New Scanfortransport", to: Routes.scanfortransport_index_path(@socket, :new) %></span>

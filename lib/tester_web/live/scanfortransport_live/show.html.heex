@@ -1,0 +1,186 @@
+<h1>Show Scanfortransport</h1>
+
+<%= if @live_action in [:edit] do %>
+  <.modal return_to={Routes.scanfortransport_show_path(@socket, :show, @scanfortransport)}>
+    <.live_component
+      module={TesterWeb.ScanfortransportLive.FormComponent}
+      id={@scanfortransport.id}
+      title={@page_title}
+      action={@live_action}
+      scanfortransport={@scanfortransport}
+      return_to={Routes.scanfortransport_show_path(@socket, :show, @scanfortransport)}
+    />
+  </.modal>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Symbol:</strong>
+    <%= @scanfortransport.symbol %>
+  </li>
+
+  <li>
+    <strong>Sscc:</strong>
+    <%= @scanfortransport.sscc %>
+  </li>
+
+  <li>
+    <strong>Uri:</strong>
+    <%= @scanfortransport.uri %>
+  </li>
+
+  <li>
+    <strong>Gnic:</strong>
+    <%= @scanfortransport.gnic %>
+  </li>
+
+  <li>
+    <strong>Grai:</strong>
+    <%= @scanfortransport.grai %>
+  </li>
+
+  <li>
+    <strong>Gsin:</strong>
+    <%= @scanfortransport.gsin %>
+  </li>
+
+  <li>
+    <strong>Routing code:</strong>
+    <%= @scanfortransport.routing_code %>
+  </li>
+
+  <li>
+    <strong>To gln:</strong>
+    <%= @scanfortransport.to_gln %>
+  </li>
+
+  <li>
+    <strong>For gln:</strong>
+    <%= @scanfortransport.for_gln %>
+  </li>
+
+  <li>
+    <strong>Service code desc:</strong>
+    <%= @scanfortransport.service_code_desc %>
+  </li>
+
+  <li>
+    <strong>Dangerous goods flag:</strong>
+    <%= @scanfortransport.dangerous_goods_flag %>
+  </li>
+
+  <li>
+    <strong>Ship to address:</strong>
+    <%= @scanfortransport.ship_to_address %>
+  </li>
+
+  <li>
+    <strong>Ship to company:</strong>
+    <%= @scanfortransport.ship_to_company %>
+  </li>
+
+  <li>
+    <strong>Ship to contact:</strong>
+    <%= @scanfortransport.ship_to_contact %>
+  </li>
+
+  <li>
+    <strong>Ship to address1:</strong>
+    <%= @scanfortransport.ship_to_address1 %>
+  </li>
+
+  <li>
+    <strong>Ship to address2:</strong>
+    <%= @scanfortransport.ship_to_address2 %>
+  </li>
+
+  <li>
+    <strong>Ship to surburb:</strong>
+    <%= @scanfortransport.ship_to_surburb %>
+  </li>
+
+  <li>
+    <strong>Ship to locality:</strong>
+    <%= @scanfortransport.ship_to_locality %>
+  </li>
+
+  <li>
+    <strong>Ship to region:</strong>
+    <%= @scanfortransport.ship_to_region %>
+  </li>
+
+  <li>
+    <strong>Ship to country code:</strong>
+    <%= @scanfortransport.ship_to_country_code %>
+  </li>
+
+  <li>
+    <strong>Ship to postal code:</strong>
+    <%= @scanfortransport.ship_to_postal_code %>
+  </li>
+
+  <li>
+    <strong>Ship to phone number:</strong>
+    <%= @scanfortransport.ship_to_phone_number %>
+  </li>
+
+  <li>
+    <strong>Ship to geocode:</strong>
+    <%= @scanfortransport.ship_to_geocode %>
+  </li>
+
+  <li>
+    <strong>Latitude:</strong>
+    <%= @scanfortransport.latitude %>
+  </li>
+
+  <li>
+    <strong>Longitude:</strong>
+    <%= @scanfortransport.longitude %>
+  </li>
+
+  <li>
+    <strong>Authority to leave:</strong>
+    <%= @scanfortransport.authority_to_leave %>
+  </li>
+
+  <li>
+    <strong>Signature flag:</strong>
+    <%= @scanfortransport.signature_flag %>
+  </li>
+
+  <li>
+    <strong>Before delivery date:</strong>
+    <%= @scanfortransport.before_delivery_date %>
+  </li>
+
+  <li>
+    <strong>Not after delivery date:</strong>
+    <%= @scanfortransport.not_after_delivery_date %>
+  </li>
+
+  <li>
+    <strong>Release data:</strong>
+    <%= @scanfortransport.release_data %>
+  </li>
+
+  <li>
+    <strong>Return to address:</strong>
+    <%= @scanfortransport.return_to_address %>
+  </li>
+
+  <li>
+    <strong>Return to company:</strong>
+    <%= @scanfortransport.return_to_company %>
+  </li>
+
+  <li>
+    <strong>Return to contact:</strong>
+    <%= @scanfortransport.return_to_contact %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.scanfortransport_show_path(@socket, :edit, @scanfortransport), class: "button" %></span> |
+<span><%= live_redirect "Back", to: Routes.scanfortransport_index_path(@socket, :index) %></span>
