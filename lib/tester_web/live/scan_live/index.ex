@@ -7,7 +7,7 @@ defmodule TesterWeb.ScanLive.Index do
     {:ok,
      socket
      |> assign(:changeset, Scan4transport.changeset(%Scan4transport{}, %{}))
-     |> assign(:url, "http://example.com")
+     |> assign(:url, "http://example.com/")
      |> assign(:sscc, "")
      |> assign(:gnic, "")
      |> assign(:symbol, "")
@@ -57,13 +57,13 @@ defmodule TesterWeb.ScanLive.Index do
 
   def handle_event("validate", params, socket) do
     IO.inspect(params)
-    
+
 
     {:noreply,
      socket
-     |> assign(:sscc, params["scan4transport"]["sscc"])
+     |> assign(:sscc, params["scan4transport"]["sscc"] )
      |> assign(:gnic, params["scan4transport"]["gnic"])
-     |> assign(:symbol, params["scan4transport"]["symbol"])
+    #  |> assign(:symbol, params["scan4transport"]["symbol"])
      |> assign(:gsin, params["scan4transport"]["gsin"])
      |> assign(:grai, params["scan4transport"]["grai"])
      |> assign(:routing_code, params["scan4transport"]["routing_code"])
