@@ -3,11 +3,11 @@ defmodule TesterWeb.ScanLive.Index do
   alias Tester.Scan4transports
   alias Tester.Scan4transports.Scan4transport
 
-  def mount(params, _session, socket) do
+  def mount(_params, _session, socket) do
     {:ok,
      socket
      |> assign(:changeset, Scan4transport.changeset(%Scan4transport{}, %{}))
-     |> assign(:url, "http://example.com/")
+     |> assign(:url, "https://example.com")
      |> assign(:sscc, "")
      |> assign(:gnic, "")
      |> assign(:symbol, "")
@@ -52,18 +52,359 @@ defmodule TesterWeb.ScanLive.Index do
      |> assign(:length_first_dimension, "")
      |> assign(:width_second_dimension, "")
      |> assign(:depth_thickness_height, "")
-     |> assign(:logistic_volume, "")}
+     |> assign(:logistic_volume, "")
+     |> assign(:prevalue, "")
+     |> assign(:prevalue1, "")
+     |> assign(:prevalue2, "")
+     |> assign(:prevalue3, "")
+     |> assign(:prevalue4, "")
+     |> assign(:prevalue5, "")
+     |> assign(:prevalue6, "")
+     |> assign(:prevalue7, "")
+     |> assign(:prevalue8, "")
+     |> assign(:prevalue9, "")
+     |> assign(:prevalue10, "")
+     |> assign(:prevalue11, "")
+     |> assign(:prevalue12, "")
+     |> assign(:prevalue13, "")
+     |> assign(:prevalue14, "")
+     |> assign(:prevalue15, "")
+     |> assign(:prevalue16, "")
+     |> assign(:prevalue17, "")
+     |> assign(:prevalue18, "")
+     |> assign(:prevalue19, "")
+     |> assign(:prevalue20, "")
+     |> assign(:prevalue21, "")
+     |> assign(:prevalue22, "")
+     |> assign(:prevalue23, "")
+     |> assign(:prevalue24, "")
+     |> assign(:prevalue25, "")
+     |> assign(:prevalue26, "")
+     |> assign(:prevalue27, "")
+     |> assign(:prevalue28, "")
+     |> assign(:prevalue29, "")
+     |> assign(:prevalue30, "")
+     |> assign(:prevalue31, "")
+     |> assign(:prevalue32, "")
+     |> assign(:prevalue33, "")
+     |> assign(:prevalue34, "")
+     |> assign(:prevalue35, "")
+     |> assign(:prevalue36, "")
+     |> assign(:prevalue37, "")
+     |> assign(:prevalue38, "")
+     |> assign(:prevalue39, "")
+     |> assign(:questionmark, "")}
+
   end
 
   def handle_event("validate", params, socket) do
-    IO.inspect(params)
+    IO.inspect(params["scan4transport"]["sscc"])
+    IO.inspect(params["scan4transport"]["gnic"])
+
+      prevalue =
+      if params["scan4transport"]["sscc"] != ""do
+        "/00/"
+      else
+        ""
+      end
+      questionmark =
+      if params["scan4transport"]["sscc"] != ""do
+        "?"
+      else
+        ""
+      end
+      prevalue1 =
+  if params["scan4transport"]["gnic"] != "" do
+    "&401="
+  else
+    ""
+  end
+
+prevalue2 =
+  if params["scan4transport"]["gsin"] != "" do
+    "&402="
+  else
+    ""
+  end
+
+prevalue3 =
+  if params["scan4transport"]["grai"] != "" do
+    "&8003="
+  else
+    ""
+  end
+
+prevalue4 =
+  if params["scan4transport"]["routing_code"] != "" do
+    "&403="
+  else
+    ""
+  end
+
+prevalue5 =
+  if params["scan4transport"]["to_gln"] != "" do
+    "&410="
+  else
+    ""
+  end
+
+prevalue6 =
+  if params["scan4transport"]["for_gln"] != "" do
+    "&413="
+  else
+    ""
+  end
+
+prevalue7 =
+  if params["scan4transport"]["service_code_desc"] != "" do
+    "&4320="
+  else
+    ""
+  end
+
+prevalue8 =
+  if params["scan4transport"]["dangerous_goods_flag"] != "" do
+    "&4321="
+  else
+    ""
+  end
+
+prevalue9 =
+  if params["scan4transport"]["ship_to_company"] != "" do
+    "&4300="
+  else
+    ""
+  end
+
+prevalue10 =
+  if params["scan4transport"]["ship_to_contact"] != "" do
+    "&4301="
+  else
+    ""
+  end
+  prevalue11 =
+  if params["scan4transport"]["ship_to_address1"] != "" do
+    "&4302="
+  else
+    ""
+  end
+
+prevalue12 =
+  if params["scan4transport"]["ship_to_address2"] != "" do
+    "&4303="
+  else
+    ""
+  end
+
+prevalue13 =
+  if params["scan4transport"]["ship_to_suburb"] != "" do
+    "&4304="
+  else
+    ""
+  end
+
+prevalue14 =
+  if params["scan4transport"]["ship_to_locality"] != "" do
+    "&4305="
+  else
+    ""
+  end
+
+prevalue15 =
+  if params["scan4transport"]["ship_to_region"] != "" do
+    "&4306="
+  else
+    ""
+  end
+
+prevalue16 =
+  if params["scan4transport"]["ship_to_country_code"] != "" do
+    "&4307="
+  else
+    ""
+  end
+
+prevalue17 =
+  if params["scan4transport"]["ship_to_postal_code"] != "" do
+    "&420="
+  else
+    ""
+  end
+
+prevalue18 =
+  if params["scan4transport"]["ship_to_phone_number"] != "" do
+    "&4308="
+  else
+    ""
+  end
+
+prevalue19 =
+  if params["scan4transport"]["ship_to_geocode"] != "" do
+    "&4309="
+  else
+    ""
+  end
+
+prevalue20 =
+  if params["scan4transport"]["authority_to_leave"] != "" do
+    "&4322="
+  else
+    ""
+  end
+
+prevalue21 =
+  if params["scan4transport"]["signature_flag"] != "" do
+    "&4323="
+  else
+    ""
+  end
+
+prevalue22 =
+  if params["scan4transport"]["before_delivery_date"] != "" do
+    "&4324="
+  else
+    ""
+  end
+
+prevalue23 =
+  if params["scan4transport"]["not_after_delivery_date"] != "" do
+    "&4325="
+  else
+    ""
+  end
+
+prevalue24 =
+  if params["scan4transport"]["release_date"] != "" do
+    "&4326="
+  else
+    ""
+  end
+
+prevalue25 =
+  if params["scan4transport"]["return_to_company"] != "" do
+    "&4310="
+  else
+    ""
+  end
+
+prevalue26 =
+  if params["scan4transport"]["return_to_contact"] != "" do
+    "&4311="
+  else
+    ""
+  end
+
+prevalue27 =
+  if params["scan4transport"]["return_to_address1"] != "" do
+    "&4312="
+  else
+    ""
+  end
+
+prevalue28 =
+  if params["scan4transport"]["return_to_address2"] != "" do
+    "&4313="
+  else
+    ""
+  end
+
+prevalue29 =
+  if params["scan4transport"]["return_to_surburb"] != "" do
+    "&4314="
+  else
+    ""
+  end
+
+prevalue30 =
+  if params["scan4transport"]["return_to_locality"] != "" do
+    "&4315="
+  else
+    ""
+  end
+
+prevalue31 =
+  if params["scan4transport"]["return_to_region"] != "" do
+    "&4316="
+  else
+    ""
+  end
+
+prevalue32 =
+  if params["scan4transport"]["return_to_country_code"] != "" do
+    "&4317"
+  else
+    ""
+  end
+
+prevalue33 =
+  if params["scan4transport"]["return_to_postal_code"] != "" do
+    "&4318="
+  else
+    ""
+  end
+
+prevalue34 =
+  if params["scan4transport"]["return_to_phone_number"] != "" do
+    "&4319="
+  else
+    ""
+  end
+
+prevalue35 =
+  if params["scan4transport"]["logistic_weight"] != "" do
+    "&3300="
+  else
+    ""
+  end
+
+prevalue36 =
+  if params["scan4transport"]["length_first_dimension"] != "" do
+    "&3310="
+  else
+    ""
+  end
+
+prevalue37 =
+  if params["scan4transport"]["width_second_dimension"] != "" do
+    "&3320="
+  else
+    ""
+  end
+
+prevalue38 =
+  if params["scan4transport"]["depth_thickness_height"] != "" do
+    "&3330="
+  else
+    ""
+  end
+
+prevalue39 =
+  if params["scan4transport"]["logistic_volume"] != "" do
+    "&3360="
+  else
+    ""
+  end
+
+# prevalue40 =
+#   if params["scan4transport"]["latitude"] != "" do
+#     "/00/"
+#   else
+#     ""
+#   end
+
+# prevalue41 =
+#   if params["scan4transport"]["longitude"] != "" do
+#     "/00/"
+#   else
+#     ""
+#   end
 
 
     {:noreply,
      socket
-     |> assign(:sscc, params["scan4transport"]["sscc"] )
+     |> assign(:sscc, params["scan4transport"]["sscc"])
      |> assign(:gnic, params["scan4transport"]["gnic"])
-    #  |> assign(:symbol, params["scan4transport"]["symbol"])
+     #  |> assign(:symbol, params["scan4transport"]["symbol"])
      |> assign(:gsin, params["scan4transport"]["gsin"])
      |> assign(:grai, params["scan4transport"]["grai"])
      |> assign(:routing_code, params["scan4transport"]["routing_code"])
@@ -103,11 +444,66 @@ defmodule TesterWeb.ScanLive.Index do
      |> assign(:depth_thickness_height, params["scan4transport"]["depth_thickness_height"])
      |> assign(:logistic_volume, params["scan4transport"]["logistic_volume"])
      |> assign(:latitude, params["scan4transport"]["latitude"])
-     |> assign(:longitude, params["scan4transport"]["longitude"])}
+     |> assign(:longitude, params["scan4transport"]["longitude"])
+
+     |> assign(:prevalue, prevalue)
+     |> assign(:prevalue1, prevalue1)
+     |> assign(:prevalue2, prevalue2)
+     |> assign(:prevalue3, prevalue3)
+     |> assign(:prevalue4, prevalue4)
+     |> assign(:prevalue5, prevalue5)
+     |> assign(:prevalue6, prevalue6)
+     |> assign(:prevalue7, prevalue7)
+     |> assign(:prevalue8, prevalue8)
+     |> assign(:prevalue9, prevalue9)
+     |> assign(:prevalue10, prevalue10)
+     |> assign(:prevalue11, prevalue11)
+     |> assign(:prevalue12, prevalue12)
+     |> assign(:prevalue13, prevalue13)
+     |> assign(:prevalue14, prevalue14)
+     |> assign(:prevalue15, prevalue15)
+     |> assign(:prevalue16, prevalue16)
+     |> assign(:prevalue17, prevalue17)
+     |> assign(:prevalue18, prevalue18)
+     |> assign(:prevalue19, prevalue19)
+     |> assign(:prevalue20, prevalue20)
+     |> assign(:prevalue21, prevalue21)
+     |> assign(:prevalue22, prevalue22)
+     |> assign(:prevalue23, prevalue23)
+     |> assign(:prevalue24, prevalue24)
+     |> assign(:prevalue25, prevalue25)
+     |> assign(:prevalue26, prevalue26)
+     |> assign(:prevalue27, prevalue27)
+     |> assign(:prevalue28, prevalue28)
+     |> assign(:prevalue29, prevalue29)
+     |> assign(:prevalue30, prevalue30)
+     |> assign(:prevalue31, prevalue31)
+     |> assign(:prevalue32, prevalue32)
+     |> assign(:prevalue33, prevalue33)
+     |> assign(:prevalue34, prevalue34)
+     |> assign(:prevalue35, prevalue35)
+     |> assign(:prevalue36, prevalue36)
+     |> assign(:prevalue37, prevalue37)
+     |> assign(:prevalue38, prevalue38)
+     |> assign(:prevalue39, prevalue39)
+     |> assign(:questionmark, questionmark)
+
+
+    }
   end
 
   def handle_event("save", _, socket) do
     {:noreply, socket}
+  end
+
+  defp concatenate_variables(params, key) do
+    value = params["scan4transport"][key]
+
+    if value == "" do
+      ""
+    else
+      "&"
+    end
   end
 end
 
