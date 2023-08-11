@@ -574,6 +574,9 @@ defmodule TesterWeb.ScanLive.Index do
         |> String.replace(" ", "+")
       end
   end
+  def uncheck_string(word)do
+    String.replace(word,"+"," ")
+  end
 end
 
 # sscc = params["scan4transport"]["sscc"]
