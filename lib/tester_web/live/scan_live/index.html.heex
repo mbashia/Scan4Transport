@@ -89,7 +89,7 @@
       </div>
       <div class="flex w-full mb-2 ">
         <%= label(f, :"dangerous goods flag", class: " bg-[#f7c999] w-[20%]") %>
-        <%= select(f, :dangerous_goods_flag,  [{"yes", 1}, {"no", 0}],
+        <%= select(f, :dangerous_goods_flag, [{"yes", 1}, {"no", 0}],
           prompt: "select type",
           class: " w-[50%] text-black",
           style: "height:40px; ",
@@ -271,7 +271,7 @@
       </div>
       <div class="flex w-full mb-2 ">
         <%= label(f, :"signature required flag", class: " bg-[#c9f4cb] w-[20%]") %>
-        <%= select(f, :signature_flag,  [{"yes", 1}, {"no", 0}],
+        <%= select(f, :signature_flag, [{"yes", 1}, {"no", 0}],
           prompt: "select type",
           class: " w-[50%] text-black",
           style: "height:40px; ",
@@ -495,49 +495,87 @@
       class="qrcode whitespace-normal h-[7%] mb-2 text-sm border h break-words p-4 align-center overflow-y-auto "
       id="qrtext"
     >
-  
       <%= @url <>
-
-       @prevalue<>@sscc <>@questionmark<>
-        @prevalue1 <> @gnic <>
-@prevalue2 <> @gsin <>
-@prevalue3 <> @grai <>
-@prevalue4 <> @routing_code <>
-@prevalue5 <> @to_gln <>
-@prevalue6 <> @for_gln <>
-@prevalue7 <> @service_code_desc <>
-@prevalue8 <> @dangerous_goods_flag <>
-@prevalue9 <> @ship_to_company <>
-@prevalue10 <> @ship_to_contact <>
-@prevalue11 <> @ship_to_address1 <>
-@prevalue12 <> @ship_to_address2 <>
-@prevalue13 <> @ship_to_suburb <>
-@prevalue14 <> @ship_to_locality <>
-@prevalue15 <> @ship_to_region <>
-@prevalue16 <> @ship_to_country_code <>
-@prevalue17 <> @ship_to_postal_code <>
-@prevalue18 <> @ship_to_phone_number <>
-@prevalue19 <> @ship_to_geocode <>
-@prevalue20 <> @authority_to_leave <>
-@prevalue21 <> @signature_flag <>
-@prevalue22 <> @before_delivery_date <>
-@prevalue23 <> @not_after_delivery_date <>
-@prevalue24 <> @release_date <>
-@prevalue25 <> @return_to_company <>
-@prevalue26 <> @return_to_contact <>
-@prevalue27 <> @return_to_address1 <>
-@prevalue28 <> @return_to_address2 <>
-@prevalue29 <> @return_to_surburb <>
-@prevalue30 <> @return_to_locality <>
-@prevalue31 <> @return_to_region <>
-@prevalue32 <> @return_to_country_code <>
-@prevalue33 <> @return_to_postal_code <>
-@prevalue34 <> @return_to_phone_number <>
-@prevalue35 <> @logistic_weight <>
-@prevalue36 <> @length_first_dimension <>
-@prevalue37 <> @width_second_dimension <>
-@prevalue38 <> @depth_thickness_height <>
-@prevalue39 <> @logistic_volume %>
+        @prevalue <>
+        @sscc <>
+        @questionmark <>
+        @prevalue1 <>
+        @gnic <>
+        @prevalue2 <>
+        @gsin <>
+        @prevalue3 <>
+        @grai <>
+        @prevalue4 <>
+        @routing_code <>
+        @prevalue5 <>
+        @to_gln <>
+        @prevalue6 <>
+        @for_gln <>
+        @prevalue7 <>
+        @service_code_desc <>
+        @prevalue8 <>
+        @dangerous_goods_flag <>
+        @prevalue9 <>
+        @ship_to_company <>
+        @prevalue10 <>
+        @ship_to_contact <>
+        @prevalue11 <>
+        @ship_to_address1 <>
+        @prevalue12 <>
+        @ship_to_address2 <>
+        @prevalue13 <>
+        @ship_to_suburb <>
+        @prevalue14 <>
+        @ship_to_locality <>
+        @prevalue15 <>
+        @ship_to_region <>
+        @prevalue16 <>
+        @ship_to_country_code <>
+        @prevalue17 <>
+        @ship_to_postal_code <>
+        @prevalue18 <>
+        @ship_to_phone_number <>
+        @prevalue19 <>
+        @ship_to_geocode <>
+        @prevalue20 <>
+        @authority_to_leave <>
+        @prevalue21 <>
+        @signature_flag <>
+        @prevalue22 <>
+        @before_delivery_date <>
+        @prevalue23 <>
+        @not_after_delivery_date <>
+        @prevalue24 <>
+        @release_date <>
+        @prevalue25 <>
+        @return_to_company <>
+        @prevalue26 <>
+        @return_to_contact <>
+        @prevalue27 <>
+        @return_to_address1 <>
+        @prevalue28 <>
+        @return_to_address2 <>
+        @prevalue29 <>
+        @return_to_surburb <>
+        @prevalue30 <>
+        @return_to_locality <>
+        @prevalue31 <>
+        @return_to_region <>
+        @prevalue32 <>
+        @return_to_country_code <>
+        @prevalue33 <>
+        @return_to_postal_code <>
+        @prevalue34 <>
+        @return_to_phone_number <>
+        @prevalue35 <>
+        @logistic_weight <>
+        @prevalue36 <>
+        @length_first_dimension <>
+        @prevalue37 <>
+        @width_second_dimension <>
+        @prevalue38 <>
+        @depth_thickness_height <>
+        @prevalue39 <> @logistic_volume %>
     </div>
 
     <div class="h-[200px] w-[200px] ml-[25%] mt-[20%]" id="qr" phx-hook="qrcode"></div>
