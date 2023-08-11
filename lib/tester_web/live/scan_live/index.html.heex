@@ -52,7 +52,7 @@
       </div>
       <div class="flex w-full mb-2 ">
         <%= label(f, :grai, class: " bg-[#f7c999] w-[20%]") %>
-        <%= text_input(f, :grai, value: uncheck_string( @grai, class: " w-[50%]", style: "height:20px")) %>
+        <%= text_input(f, :grai, value: uncheck_string( @grai), class: " w-[50%]", style: "height:20px") %>
         <%= error_tag(f, :grai) %>
         <div>8003</div>
       </div>
@@ -60,7 +60,7 @@
       <div class="flex w-full mb-2 ">
         <%= label(f, :"routing code", class: " bg-[#f7c999] w-[20%]") %>
         <%= text_input(f, :routing_code,
-          value: @routing_code,
+          value: uncheck_string(@routing_code),
           class: " w-[50%]",
           style: "height:20px"
         ) %>
@@ -69,13 +69,13 @@
       </div>
       <div class="flex w-full mb-2 ">
         <%= label(f, :"ship to/deliver-to Gln", class: " bg-[#f7c999] w-[20%]") %>
-        <%= text_input(f, :to_gln, value: uncheck_string(@to_gln, class: " w-[50%]", style: "height:20px") %>
+        <%= text_input(f, :to_gln, value: uncheck_string(@to_gln), class: " w-[50%]", style: "height:20px") %>
         <%= error_tag(f, :to_gln) %>
         <div>410</div>
       </div>
       <div class="flex w-full mb-2 ">
         <%= label(f, :"ship for/deliver-for Gln", class: " bg-[#f7c999] w-[20%]") %>
-        <%= text_input(f, :for_gln, value: uncheck_string( @for_gln, class: " w-[50%]", style: "height:20px") %>
+        <%= text_input(f, :for_gln, value: uncheck_string( @for_gln), class: " w-[50%]", style: "height:20px") %>
         <%= error_tag(f, :for_gln) %>
         <div>413</div>
       </div>
@@ -134,7 +134,7 @@
       <div class="flex w-full mb-2 ">
         <%= label(f, :"ship-to/Deliver-to contact", class: " bg-[#f7c999] w-[20%]") %>
         <%= text_input(f, :ship_to_contact,
-          value:  uncheck_string@ship_to_contact),
+          value:  uncheck_string(@ship_to_contact),
           class: " w-[50%]",
           style: "height:20px"
         ) %>
