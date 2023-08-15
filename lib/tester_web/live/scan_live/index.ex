@@ -481,7 +481,7 @@ defmodule TesterWeb.ScanLive.Index do
      |> assign(:grai, grai)
      |> assign(:routing_code, routing_code)
      |> assign(:to_gln, to_gln)
-     |>assign(:for_gln, for_gln)
+     |> assign(:for_gln, for_gln)
      |> assign(:service_code_desc, service_code_desc)
      |> assign(:dangerous_goods_flag, dangerous_goods_flag)
      |> assign(:ship_to_company, ship_to_company)
@@ -574,8 +574,9 @@ defmodule TesterWeb.ScanLive.Index do
         |> String.replace(" ", "+")
       end
   end
-  def uncheck_string(word)do
-    String.replace(word,"+"," ")
+
+  def uncheck_string(word) do
+    String.replace(word, "+", " ")
   end
 end
 
