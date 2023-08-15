@@ -115,10 +115,9 @@ defmodule TesterWeb.ScanLive.Index do
       else
         ""
       end
-
     prevalue1 =
       if params["scan4transport"]["gnic"] != "" &&
-           String.trim(params["scan4transport"]["gnic"]) != "" do
+           String.trim(params["scan4transport"]["gnic"]) != "" &&  params["scan4transport"]["sscc"] != ""do
         "&401="
       else
         ""
@@ -126,7 +125,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue2 =
       if params["scan4transport"]["gsin"] != "" &&
-           String.trim(params["scan4transport"]["gsin"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["gsin"]) != "" do
         "&402="
       else
         ""
@@ -134,7 +134,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue3 =
       if params["scan4transport"]["grai"] != "" &&
-           String.trim(params["scan4transport"]["grai"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["grai"]) != "" do
         "&8003="
       else
         ""
@@ -142,7 +143,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue4 =
       if params["scan4transport"]["routing_code"] != "" &&
-           String.trim(params["scan4transport"]["routing_code"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["routing_code"]) != "" do
         "&403="
       else
         ""
@@ -150,7 +152,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue5 =
       if params["scan4transport"]["to_gln"] != "" &&
-           String.trim(params["scan4transport"]["to_gln"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["to_gln"]) != "" do
         "&410="
       else
         ""
@@ -158,7 +161,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue6 =
       if params["scan4transport"]["for_gln"] != "" &&
-           String.trim(params["scan4transport"]["for_gln"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["for_gln"]) != "" do
         "&413="
       else
         ""
@@ -166,7 +170,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue7 =
       if params["scan4transport"]["service_code_desc"] != "" &&
-           String.trim(params["scan4transport"]["service_code_desc"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["service_code_desc"]) != "" do
         "&4320="
       else
         ""
@@ -174,7 +179,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue8 =
       if params["scan4transport"]["dangerous_goods_flag"] != "" &&
-           String.trim(params["scan4transport"]["dangerous_goods_flag"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["dangerous_goods_flag"]) != "" do
         "&4321="
       else
         ""
@@ -182,7 +188,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue9 =
       if params["scan4transport"]["ship_to_company"] != "" &&
-           String.trim(params["scan4transport"]["ship_to_company"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["ship_to_company"]) != "" do
         "&4300="
       else
         ""
@@ -190,7 +197,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue10 =
       if params["scan4transport"]["ship_to_contact"] != "" &&
-           String.trim(params["scan4transport"]["ship_to_contact"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["ship_to_contact"]) != "" do
         "&4301="
       else
         ""
@@ -198,7 +206,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue11 =
       if params["scan4transport"]["ship_to_address1"] != "" &&
-           String.trim(params["scan4transport"]["ship_to_address1"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["ship_to_address1"]) != "" do
         "&4302="
       else
         ""
@@ -206,7 +215,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue12 =
       if params["scan4transport"]["ship_to_address2"] != "" &&
-           String.trim(params["scan4transport"]["ship_to_address2"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["ship_to_address2"]) != "" do
         "&4303="
       else
         ""
@@ -214,7 +224,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue13 =
       if params["scan4transport"]["ship_to_suburb"] != "" &&
-           String.trim(params["scan4transport"]["ship_to_suburb"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["ship_to_suburb"]) != "" do
         "&4304="
       else
         ""
@@ -222,7 +233,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue14 =
       if params["scan4transport"]["ship_to_locality"] != "" &&
-           String.trim(params["scan4transport"]["ship_to_locality"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["ship_to_locality"]) != "" do
         "&4305="
       else
         ""
@@ -230,7 +242,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue15 =
       if params["scan4transport"]["ship_to_region"] != "" &&
-           String.trim(params["scan4transport"]["ship_to_region"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["ship_to_region"]) != "" do
         "&4306="
       else
         ""
@@ -238,7 +251,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue16 =
       if params["scan4transport"]["ship_to_country_code"] != "" &&
-           String.trim(params["scan4transport"]["ship_to_country_code"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["ship_to_country_code"]) != "" do
         "&4307="
       else
         ""
@@ -246,7 +260,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue17 =
       if params["scan4transport"]["ship_to_postal_code"] != "" &&
-           String.trim(params["scan4transport"]["ship_to_postal_code"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["ship_to_postal_code"]) != "" do
         "&420="
       else
         ""
@@ -254,7 +269,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue18 =
       if params["scan4transport"]["ship_to_phone_number"] != "" &&
-           String.trim(params["scan4transport"]["ship_to_phone_number"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["ship_to_phone_number"]) != "" do
         "&4308="
       else
         ""
@@ -262,7 +278,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue19 =
       if params["scan4transport"]["ship_to_geocode"] != "" &&
-           String.trim(params["scan4transport"]["ship_to_geocode"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["ship_to_geocode"]) != "" do
         "&4309="
       else
         ""
@@ -270,7 +287,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue20 =
       if params["scan4transport"]["authority_to_leave"] != "" &&
-           String.trim(params["scan4transport"]["authority_to_leave"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["authority_to_leave"]) != "" do
         "&4322="
       else
         ""
@@ -278,7 +296,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue21 =
       if params["scan4transport"]["signature_flag"] != "" &&
-           String.trim(params["scan4transport"]["signature_flag"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["signature_flag"]) != "" do
         "&4323="
       else
         ""
@@ -286,7 +305,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue22 =
       if params["scan4transport"]["before_delivery_date"] != "" &&
-           String.trim(params["scan4transport"]["before_delivery_date"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["before_delivery_date"]) != "" do
         "&4324="
       else
         ""
@@ -294,7 +314,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue23 =
       if params["scan4transport"]["not_after_delivery_date"] != "" &&
-           String.trim(params["scan4transport"]["not_after_delivery_date"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["not_after_delivery_date"]) != "" do
         "&4325="
       else
         ""
@@ -302,7 +323,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue24 =
       if params["scan4transport"]["release_date"] != "" &&
-           String.trim(params["scan4transport"]["release_date"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["release_date"]) != "" do
         "&4326="
       else
         ""
@@ -310,7 +332,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue25 =
       if params["scan4transport"]["return_to_company"] != "" &&
-           String.trim(params["scan4transport"]["return_to_company"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["return_to_company"]) != "" do
         "&4310="
       else
         ""
@@ -318,7 +341,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue26 =
       if params["scan4transport"]["return_to_contact"] != "" &&
-           String.trim(params["scan4transport"]["return_to_contact"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["return_to_contact"]) != "" do
         "&4311="
       else
         ""
@@ -326,7 +350,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue27 =
       if params["scan4transport"]["return_to_address1"] != "" &&
-           String.trim(params["scan4transport"]["return_to_address1"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["return_to_address1"]) != "" do
         "&4312="
       else
         ""
@@ -334,7 +359,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue28 =
       if params["scan4transport"]["return_to_address2"] != "" &&
-           String.trim(params["scan4transport"]["return_to_address2"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["return_to_address2"]) != "" do
         "&4313="
       else
         ""
@@ -342,7 +368,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue29 =
       if params["scan4transport"]["return_to_surburb"] != "" &&
-           String.trim(params["scan4transport"]["return_to_surburb"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["return_to_surburb"]) != "" do
         "&4314="
       else
         ""
@@ -350,7 +377,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue30 =
       if params["scan4transport"]["return_to_locality"] != "" &&
-           String.trim(params["scan4transport"]["return_to_locality"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["return_to_locality"]) != "" do
         "&4315="
       else
         ""
@@ -358,7 +386,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue31 =
       if params["scan4transport"]["return_to_region"] != "" &&
-           String.trim(params["scan4transport"]["return_to_region"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["return_to_region"]) != "" do
         "&4316="
       else
         ""
@@ -366,7 +395,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue32 =
       if params["scan4transport"]["return_to_country_code"] != "" &&
-           String.trim(params["scan4transport"]["return_to_country_code"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["return_to_country_code"]) != "" do
         "&4317"
       else
         ""
@@ -374,7 +404,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue33 =
       if params["scan4transport"]["return_to_postal_code"] != "" &&
-           String.trim(params["scan4transport"]["return_to_postal_code"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["return_to_postal_code"]) != "" do
         "&4318="
       else
         ""
@@ -382,7 +413,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue34 =
       if params["scan4transport"]["return_to_phone_number"] != "" &&
-           String.trim(params["scan4transport"]["return_to_phone_number"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["return_to_phone_number"]) != "" do
         "&4319="
       else
         ""
@@ -390,7 +422,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue35 =
       if params["scan4transport"]["logistic_weight"] != "" &&
-           String.trim(params["scan4transport"]["logistic_weight"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["logistic_weight"]) != "" do
         "&3300="
       else
         ""
@@ -398,7 +431,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue36 =
       if params["scan4transport"]["length_first_dimension"] != "" &&
-           String.trim(params["scan4transport"]["length_first_dimension"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["length_first_dimension"]) != "" do
         "&3310="
       else
         ""
@@ -406,7 +440,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue37 =
       if params["scan4transport"]["width_second_dimension"] != "" &&
-           String.trim(params["scan4transport"]["width_second_dimension"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["width_second_dimension"]) != "" do
         "&3320="
       else
         ""
@@ -414,7 +449,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue38 =
       if params["scan4transport"]["depth_thickness_height"] != "" &&
-           String.trim(params["scan4transport"]["depth_thickness_height"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["depth_thickness_height"]) != "" do
         "&3330="
       else
         ""
@@ -422,7 +458,8 @@ defmodule TesterWeb.ScanLive.Index do
 
     prevalue39 =
       if params["scan4transport"]["logistic_volume"] != "" &&
-           String.trim(params["scan4transport"]["logistic_volume"]) != "" do
+                params["scan4transport"]["sscc"] != ""   &&
+ String.trim(params["scan4transport"]["logistic_volume"]) != "" do
         "&3360="
       else
         ""
@@ -430,47 +467,47 @@ defmodule TesterWeb.ScanLive.Index do
 
     #
     sscc = check_string(params["scan4transport"]["sscc"])
-    gnic = check_string(params["scan4transport"]["gnic"])
-    gsin = check_string(params["scan4transport"]["gsin"])
-    grai = check_string(params["scan4transport"]["grai"])
-    routing_code = check_string(params["scan4transport"]["routing_code"])
-    to_gln = check_string(params["scan4transport"]["to_gln"])
-    for_gln = check_string(params["scan4transport"]["for_gln"])
-    service_code_desc = check_string(params["scan4transport"]["service_code_desc"])
-    dangerous_goods_flag = check_string(params["scan4transport"]["dangerous_goods_flag"])
-    ship_to_company = check_string(params["scan4transport"]["ship_to_company"])
-    ship_to_contact = check_string(params["scan4transport"]["ship_to_contact"])
-    ship_to_address1 = check_string(params["scan4transport"]["ship_to_address1"])
-    ship_to_address2 = check_string(params["scan4transport"]["ship_to_address2"])
-    ship_to_suburb = check_string(params["scan4transport"]["ship_to_suburb"])
-    ship_to_locality = check_string(params["scan4transport"]["ship_to_locality"])
-    ship_to_region = check_string(params["scan4transport"]["ship_to_region"])
-    ship_to_country_code = check_string(params["scan4transport"]["ship_to_country_code"])
-    ship_to_postal_code = check_string(params["scan4transport"]["ship_to_postal_code"])
-    ship_to_phone_number = check_string(params["scan4transport"]["ship_to_phone_number"])
-    ship_to_geocode = check_string(params["scan4transport"]["ship_to_geocode"])
-    authority_to_leave = check_string(params["scan4transport"]["authority_to_leave"])
-    signature_flag = check_string(params["scan4transport"]["signature_flag"])
-    before_delivery_date = check_string(params["scan4transport"]["before_delivery_date"])
-    not_after_delivery_date = check_string(params["scan4transport"]["not_after_delivery_date"])
-    release_date = check_string(params["scan4transport"]["release_date"])
-    return_to_company = check_string(params["scan4transport"]["return_to_company"])
-    return_to_contact = check_string(params["scan4transport"]["return_to_contact"])
-    return_to_address1 = check_string(params["scan4transport"]["return_to_address1"])
-    return_to_address2 = check_string(params["scan4transport"]["return_to_address2"])
-    return_to_surburb = check_string(params["scan4transport"]["return_to_surburb"])
-    return_to_locality = check_string(params["scan4transport"]["return_to_locality"])
-    return_to_region = check_string(params["scan4transport"]["return_to_region"])
-    return_to_country_code = check_string(params["scan4transport"]["return_to_country_code"])
-    return_to_postal_code = check_string(params["scan4transport"]["return_to_postal_code"])
-    return_to_phone_number = check_string(params["scan4transport"]["return_to_phone_number"])
-    logistic_weight = check_string(params["scan4transport"]["logistic_weight"])
-    length_first_dimension = check_string(params["scan4transport"]["length_first_dimension"])
-    width_second_dimension = check_string(params["scan4transport"]["width_second_dimension"])
-    depth_thickness_height = check_string(params["scan4transport"]["depth_thickness_height"])
-    logistic_volume = check_string(params["scan4transport"]["logistic_volume"])
-    latitude = check_string(params["scan4transport"]["latitude"])
-    longitude = check_string(params["scan4transport"]["longitude"])
+    gnic = if sscc != "" do check_string(params["scan4transport"]["gnic"]) else "" end
+    gsin =  if sscc != "" do check_string(params["scan4transport"]["gsin"]) else "" end
+    grai =  if sscc != "" do check_string(params["scan4transport"]["grai"]) else "" end
+    routing_code =  if sscc != "" do check_string(params["scan4transport"]["routing_code"]) else "" end
+    to_gln =  if sscc != "" do check_string(params["scan4transport"]["to_gln"]) else "" end
+    for_gln =  if sscc != "" do check_string(params["scan4transport"]["for_gln"]) else "" end
+    service_code_desc =  if sscc != "" do check_string(params["scan4transport"]["service_code_desc"]) else "" end
+    dangerous_goods_flag =  if sscc != "" do check_string(params["scan4transport"]["dangerous_goods_flag"]) else "" end
+    ship_to_company =  if sscc != "" do check_string(params["scan4transport"]["ship_to_company"]) else "" end
+    ship_to_contact =  if sscc != "" do check_string(params["scan4transport"]["ship_to_contact"]) else "" end
+    ship_to_address1 =  if sscc != "" do check_string(params["scan4transport"]["ship_to_address1"]) else "" end
+    ship_to_address2 =  if sscc != "" do check_string(params["scan4transport"]["ship_to_address2"]) else "" end
+    ship_to_suburb =  if sscc != "" do check_string(params["scan4transport"]["ship_to_suburb"]) else "" end
+    ship_to_locality =  if sscc != "" do check_string(params["scan4transport"]["ship_to_locality"]) else "" end
+    ship_to_region =  if sscc != "" do check_string(params["scan4transport"]["ship_to_region"]) else "" end
+    ship_to_country_code =  if sscc != "" do check_string(params["scan4transport"]["ship_to_country_code"]) else "" end
+    ship_to_postal_code =  if sscc != "" do check_string(params["scan4transport"]["ship_to_postal_code"]) else "" end
+    ship_to_phone_number =  if sscc != "" do check_string(params["scan4transport"]["ship_to_phone_number"]) else "" end
+    ship_to_geocode =  if sscc != "" do check_string(params["scan4transport"]["ship_to_geocode"]) else "" end
+    authority_to_leave =  if sscc != "" do check_string(params["scan4transport"]["authority_to_leave"]) else "" end
+    signature_flag =  if sscc != "" do check_string(params["scan4transport"]["signature_flag"]) else "" end
+    before_delivery_date =  if sscc != "" do check_string(params["scan4transport"]["before_delivery_date"]) else "" end
+    not_after_delivery_date =  if sscc != "" do check_string(params["scan4transport"]["not_after_delivery_date"]) else "" end
+    release_date =  if sscc != "" do check_string(params["scan4transport"]["release_date"]) else "" end
+    return_to_company =  if sscc != "" do check_string(params["scan4transport"]["return_to_company"]) else "" end
+    return_to_contact =  if sscc != "" do check_string(params["scan4transport"]["return_to_contact"]) else "" end
+    return_to_address1 =  if sscc != "" do check_string(params["scan4transport"]["return_to_address1"]) else "" end
+    return_to_address2 =  if sscc != "" do check_string(params["scan4transport"]["return_to_address2"]) else "" end
+    return_to_surburb =  if sscc != "" do check_string(params["scan4transport"]["return_to_surburb"]) else "" end
+    return_to_locality =  if sscc != "" do check_string(params["scan4transport"]["return_to_locality"]) else "" end
+    return_to_region =  if sscc != "" do check_string(params["scan4transport"]["return_to_region"]) else "" end
+    return_to_country_code =  if sscc != "" do check_string(params["scan4transport"]["return_to_country_code"]) else "" end
+    return_to_postal_code =  if sscc != "" do check_string(params["scan4transport"]["return_to_postal_code"]) else "" end
+    return_to_phone_number =  if sscc != "" do check_string(params["scan4transport"]["return_to_phone_number"]) else "" end
+    logistic_weight =  if sscc != "" do check_string(params["scan4transport"]["logistic_weight"]) else "" end
+    length_first_dimension =  if sscc != "" do check_string(params["scan4transport"]["length_first_dimension"]) else "" end
+    width_second_dimension =  if sscc != "" do check_string(params["scan4transport"]["width_second_dimension"]) else "" end
+    depth_thickness_height =  if sscc != "" do check_string(params["scan4transport"]["depth_thickness_height"]) else "" end
+    logistic_volume =  if sscc != "" do check_string(params["scan4transport"]["logistic_volume"]) else "" end
+    latitude =  if sscc != "" do check_string(params["scan4transport"]["latitude"]) else "" end
+    longitude =  if sscc != "" do check_string(params["scan4transport"]["longitude"]) else "" end
 
     {:noreply,
      socket
@@ -565,18 +602,23 @@ defmodule TesterWeb.ScanLive.Index do
   end
 
   defp check_string(params) do
-    params =
+
       if String.trim(params) == "" do
         ""
       else
         params
         |> String.trim_leading()
         |> String.replace(" ", "+")
+        # |> String.replace("-", "")
+
       end
   end
 
   def uncheck_string(word) do
-    String.replace(word, "+", " ")
+    word
+    |>String.replace("+", " ")
+    # |> String.replace("", "-")
+
   end
 end
 
