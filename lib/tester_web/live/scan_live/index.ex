@@ -9,6 +9,8 @@ defmodule TesterWeb.ScanLive.Index do
      |> assign(:changeset, Scan4transport.changeset(%Scan4transport{}, %{}))
      |> assign(:url, "https://example.com")
      |> assign(:sscc, "")
+     |>assign(:ifset, 0)
+
      |> assign(:gnic, "")
      |> assign(:symbol, "")
      |> assign(:gsin, "")
@@ -508,13 +510,14 @@ defmodule TesterWeb.ScanLive.Index do
     logistic_volume =  if sscc != "" do check_string(params["scan4transport"]["logistic_volume"]) else "" end
     latitude =  if sscc != "" do check_string(params["scan4transport"]["latitude"]) else "" end
     longitude =  if sscc != "" do check_string(params["scan4transport"]["longitude"]) else "" end
-
+    ifset =if sscc != "" do 1 else 0 end
     {:noreply,
      socket
      |> assign(:sscc, sscc)
      |> assign(:gnic, gnic)
      #  |> assign(:symbol, params["scan4transport"]["symbol"])
      |> assign(:gsin, gsin)
+     |>assign(:ifset, ifset)
      |> assign(:grai, grai)
      |> assign(:routing_code, routing_code)
      |> assign(:to_gln, to_gln)

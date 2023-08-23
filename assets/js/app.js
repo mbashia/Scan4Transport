@@ -36,14 +36,25 @@ window.addEventListener("phx:page-loading-stop", info => topbar.hide())
 let Hooks = {};
 Hooks.qrcode = {
     mounted() {
+        console.log("the log is below")
 
-        var qrcode = new QRCode(document.getElementById("qr"));
-        qrcode.makeCode(document.getElementById("qr").textContent);
+        console.log(document.getElementById("qrtext").textContent)
+       qrcode =  new QRCode(document.getElementById("qrtext").textContent).svg();
+       document.getElementById("qr").innerHTML = "<p>" + qrcode + "</p>";
+
+        // var qrcode = new QRCode(document.getElementById("qr"));
+        // qrcode.makeCode(document.getElementById("qr").textContent);
        
     },
     updated(){
-        var qrcode = new QRCode(document.getElementById("qr"));
-        qrcode.makeCode(document.getElementById("qrtext").textContent);
+        console.log("the log is below")
+        console.log(document.getElementById("qrtext").textContent)
+
+       qrcode = new QRCode(document.getElementById("qrtext").textContent).svg();
+       document.getElementById("qr").innerHTML = qrcode ;
+
+        // var qrcode = new QRCode(document.getElementById("qr"));
+        // qrcode.makeCode(document.getElementById("qrtext").textContent);
     }
     
 }

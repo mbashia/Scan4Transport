@@ -7,7 +7,7 @@
       <div class="w-full mb-1 text-center text-white bg-[#1c489A]">ENCODE/GENERATE</div>
 
       <div class="flex  w-full mb-2 ">
-        <%= label(f, :"choose 2D symbol", class: " w-[20%]") %>
+        <label class = "w-[20%]"> Choose 2D symbol</label>
         <%= select(
           f,
           :symbol,
@@ -21,7 +21,7 @@
       </div>
 
       <div class="flex w-full mb-2 ">
-        <%= label(f, :SSCC, class: "  w-[20%]") %>
+        <label class = "w-[20%]">SSCC</label>
         <%= text_input(f, :sscc,
           value: uncheck_string(@sscc),
           class: " w-[75%]",
@@ -31,7 +31,8 @@
       </div>
 
       <div class="flex w-full mb-2 ">
-        <%= label(f, :"URI stem", class: " w-[20%]") %>
+            <label class = "w-[20%]"> URI stem</label>
+
         <%= text_input(f, :uri_stem,
           value: "http://example.com",
           class: " w-[75%]",
@@ -44,7 +45,7 @@
         <div>AI</div>
       </div>
       <div class="flex w-full mb-2 bg-[#f7c999]  ">
-        <%= label(f, :gnic, class: "w-[20%]") %>
+              <label class = "w-[20%]">GNIC</label>
         <%= text_input(f, :gnic,
           value: uncheck_string(@gnic),
           class: " w-[75%]",
@@ -55,7 +56,7 @@
       </div>
 
       <div class="flex w-full mb-2 bg-[#f7c999] ">
-        <%= label(f, :gsin, class: "  w-[20%]") %>
+              <label class = "w-[20%]">GSIN</label>
         <%= text_input(f, :gsin,
           value: uncheck_string(@gsin),
           class: " w-[75%]",
@@ -65,7 +66,7 @@
         <div class = "px-1">402</div>
       </div>
       <div class="flex w-full mb-2 bg-[#f7c999] ">
-        <%= label(f, :grai, class: "  w-[20%]") %>
+              <label class = "w-[20%]">GRAI</label>
         <%= text_input(f, :grai,
           value: uncheck_string(@grai),
           class: " w-[75%]",
@@ -525,7 +526,7 @@
 
     <div
       class="qrcode  whitespace-normal h-[7%] mb-2 text-sm border h break-words p-4 align-center overflow-y-auto "
-      id="qrtext"
+      id="qrtext"  phx-hook="qrcode"
     >
       <%= @url <>
         @prevalue <>
@@ -610,6 +611,48 @@
         @prevalue39 <> @logistic_volume %>
     </div>
 
-    <div class="h-[200px] w-[200px] ml-[25%] mt-[20%]  " id="qr" phx-hook="qrcode"></div>
+    <svg  id="qr" class=" h-[300px] w-[300px] ml-[25%] mt-[20%] ">
+    
+    </svg>
+    <%= if @ifset == 1  do%>
+  <button onclick = "downloadSVG()" class = "bg-gray-200 rounded p-2  text-sm text-black ml-[40%]"> download qrcode</button>
+  <%else %>
+  <div></div>
+  <%end %>
+
+
   </div>
-</div>
+
+</div> 
+
+<script>
+
+  function downloadSVG() {
+            var svg = document.getElementById("qr");
+            var serializer = new XMLSerializer();
+            var source = serializer.serializeToString(svg);
+
+            if (!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)) {
+                source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+            }
+            if (!source.match(/^<svg[^>]+"http\:\/\/www\.w3\.org\/1999\/xlink"/)) {
+                source = source.replace(/^<svg/, '<svg xmlns:xlink="http://www.w3.org/1999/xlink"');
+            }
+
+            // Add xml declaration
+            source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
+
+            var url = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(source);
+
+            var a = document.createElement("a");
+            a.href = url;
+            a.download = "qr_code.svg";  
+            document.body.appendChild(a);
+            a.click(); 
+            document.body.removeChild(a); 
+
+        }
+
+
+ 
+</script>
