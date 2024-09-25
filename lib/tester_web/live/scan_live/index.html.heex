@@ -7,7 +7,7 @@
       <div class="w-full mb-1 text-center text-white bg-[#1c489A]">ENCODE/GENERATE</div>
 
       <div class="flex  w-full mb-2 ">
-        <label class = "w-[20%]"> Choose 2D symbol</label>
+        <label class="w-[20%]">Choose 2D symbol</label>
         <%= select(
           f,
           :symbol,
@@ -21,7 +21,7 @@
       </div>
 
       <div class="flex w-full mb-2 ">
-        <label class = "w-[20%]">SSCC</label>
+        <label class="w-[20%]">SSCC</label>
         <%= text_input(f, :sscc,
           value: uncheck_string(@sscc),
           class: " w-[75%]",
@@ -31,7 +31,7 @@
       </div>
 
       <div class="flex w-full mb-2 ">
-            <label class = "w-[20%]"> URI stem</label>
+        <label class="w-[20%]">URI stem</label>
 
         <%= text_input(f, :uri_stem,
           value: "http://example.com",
@@ -45,35 +45,35 @@
         <div>AI</div>
       </div>
       <div class="flex w-full mb-2 bg-[#f7c999]  ">
-              <label class = "w-[20%]">GNIC</label>
+        <label class="w-[20%]">GNIC</label>
         <%= text_input(f, :gnic,
           value: uncheck_string(@gnic),
           class: " w-[75%]",
           style: "height:20px"
         ) %>
         <%= error_tag(f, :gnic) %>
-        <div class = "px-1">401</div>
+        <div class="px-1">401</div>
       </div>
 
       <div class="flex w-full mb-2 bg-[#f7c999] ">
-              <label class = "w-[20%]">GSIN</label>
+        <label class="w-[20%]">GSIN</label>
         <%= text_input(f, :gsin,
           value: uncheck_string(@gsin),
           class: " w-[75%]",
           style: "height:20px"
         ) %>
         <%= error_tag(f, :gsin) %>
-        <div class = "px-1">402</div>
+        <div class="px-1">402</div>
       </div>
       <div class="flex w-full mb-2 bg-[#f7c999] ">
-              <label class = "w-[20%]">GRAI</label>
+        <label class="w-[20%]">GRAI</label>
         <%= text_input(f, :grai,
           value: uncheck_string(@grai),
           class: " w-[75%]",
           style: "height:20px"
         ) %>
         <%= error_tag(f, :grai) %>
-        <div class = "px-1">8003</div>
+        <div class="px-1">8003</div>
       </div>
 
       <div class="flex w-full mb-2 bg-[#f7c999]">
@@ -84,7 +84,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :routing_code) %>
-        <div class = "px-1">403</div>
+        <div class="px-1">403</div>
       </div>
       <div class="flex w-full mb-2 bg-[#f7c999]">
         <%= label(f, :"ship to/deliver-to Gln", class: "  w-[20%]") %>
@@ -94,7 +94,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :to_gln) %>
-        <div class = "px-1">410</div>
+        <div class="px-1">410</div>
       </div>
       <div class="flex w-full mb-2 bg-[#f7c999]">
         <%= label(f, :"ship for/deliver-for Gln", class: "  w-[20%]") %>
@@ -104,7 +104,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :for_gln) %>
-        <div class = "px-1">413</div>
+        <div class="px-1">413</div>
       </div>
       <div class="flex w-full mb-2 bg-[#FCCBCB]">
         <%= label(f, :"service code description", class: "  w-[20%]") %>
@@ -114,7 +114,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :service_code_desc) %>
-        <div class = "px-1">4320</div>
+        <div class="px-1">4320</div>
       </div>
       <div class="flex w-full mb-2 bg-[#CBFDFD]">
         <%= label(f, :"dangerous goods flag", class: "  w-[20%]") %>
@@ -125,7 +125,7 @@
           value: uncheck_string(@dangerous_goods_flag)
         ) %>
         <%= error_tag(f, :dangerous_goods_flag) %>
-        <div class = "px-1">4321</div>
+        <div class="px-1">4321</div>
       </div>
       <div class="flex w-full mb-2 bg-[#FDF6CC]">
         <%= label(f, :"ship to/ deliver to address", class: " w-[20%]") %>
@@ -156,7 +156,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :ship_to_company) %>
-        <div class = "px-1">4300</div>
+        <div class="px-1">4300</div>
       </div>
       <div class="flex w-full mb-2 bg-[#FDF6CC]">
         <%= label(f, :"ship-to/Deliver-to contact", class: "  w-[20%]") %>
@@ -166,7 +166,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :ship_to_contact) %>
-        <div class = "px-1">4301</div>
+        <div class="px-1">4301</div>
       </div>
       <div class="flex w-full mb-2 bg-[#FDF6CC]">
         <%= label(f, :"ship-to/Deliver-to address line 1", class: "  w-[20%]") %>
@@ -176,7 +176,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :ship_to_address1) %>
-        <div class = "px-1">4302</div>
+        <div class="px-1">4302</div>
       </div>
       <div class="flex w-full mb-2 bg-[#FDF6CC]">
         <%= label(f, :"ship-to/Deliver-to address line 2", class: "  w-[20%]") %>
@@ -186,7 +186,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :ship_to_address2) %>
-        <div class = "px-1">4303</div>
+        <div class="px-1">4303</div>
       </div>
       <div class="flex w-full mb-2 bg-[#FDF6CC]">
         <%= label(f, :"ship-to/Deliver-to suburb ", class: "  w-[20%]") %>
@@ -196,7 +196,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :ship_to_surburb) %>
-        <div class = "px-1">4304</div>
+        <div class="px-1">4304</div>
       </div>
       <div class="flex w-full mb-2 bg-[#FDF6CC]">
         <%= label(f, :"ship-to/Deliver-to locality(town/city) ", class: "  w-[20%]") %>
@@ -206,7 +206,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :ship_to_locality) %>
-        <div class = "px-1">4305</div>
+        <div class="px-1">4305</div>
       </div>
       <div class="flex w-full mb-2 bg-[#FDF6CC]">
         <%= label(f, :"ship-to/Deliver-to region(state/county) ", class: "  w-[20%]") %>
@@ -216,7 +216,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :ship_to_region) %>
-        <div class = "px-1">4306</div>
+        <div class="px-1">4306</div>
       </div>
       <div class="flex w-full mb-2 bg-[#FDF6CC]">
         <%= label(f, :"ship-to/Deliver-to country-code", class: "  w-[20%]") %>
@@ -226,7 +226,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :ship_to_country_code) %>
-        <div class = "px-1">4307</div>
+        <div class="px-1">4307</div>
       </div>
       <div class="flex w-full mb-2 bg-[#FDF6CC]">
         <%= label(f, :"ship-to/Deliver-to postal-code", class: "  w-[20%]") %>
@@ -236,7 +236,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :ship_to_postal_code) %>
-        <div class = "px-1">420</div>
+        <div class="px-1">420</div>
       </div>
       <div class="flex w-full mb-2 bg-[#FDF6CC]">
         <%= label(f, :"ship-to/Deliver-to phone number", class: "  w-[20%]") %>
@@ -246,7 +246,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :ship_to_phone_number) %>
-        <div class = "px-1">4308</div>
+        <div class="px-1">4308</div>
       </div>
       <div class="flex w-full mb-2 bg-[#FDF6CC]">
         <%= label(f, :"ship-to/Deliver-to geocode", class: "  w-[20%]") %>
@@ -256,7 +256,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :ship_to_geocode) %>
-        <div class = "px-1">4309</div>
+        <div class="px-1">4309</div>
       </div>
       <div class="flex w-full mb-2">
         <button>show map</button>
@@ -296,7 +296,7 @@
           value: uncheck_string(@authority_to_leave)
         ) %>
         <%= error_tag(f, :authority_to_leave) %>
-        <div class = "px-1">4322</div>
+        <div class="px-1">4322</div>
       </div>
       <div class="flex w-full mb-2  bg-[#c9f4cb]">
         <%= label(f, :"signature required flag", class: "  w-[20%]") %>
@@ -307,7 +307,7 @@
           value: uncheck_string(@signature_flag)
         ) %>
         <%= error_tag(f, :signature_flag) %>
-        <div class = "px-1">4323</div>
+        <div class="px-1">4323</div>
       </div>
 
       <div class="flex w-full mb-2  bg-[#c9f4cb]">
@@ -318,7 +318,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :before_delivery_date) %>
-        <div class = "px-1">4324</div>
+        <div class="px-1">4324</div>
       </div>
       <div class="flex w-full mb-2  bg-[#c9f4cb]">
         <%= label(f, :"not after delivery date", class: "  w-[20%]") %>
@@ -328,7 +328,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :not_after_delivery_date) %>
-        <div class = "px-1">4325</div>
+        <div class="px-1">4325</div>
       </div>
       <div class="flex w-full mb-2  bg-[#c9f4cb]">
         <%= label(f, :"release date", class: "  w-[20%]") %>
@@ -338,7 +338,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :release_date) %>
-        <div class = "px-1">4326</div>
+        <div class="px-1">4326</div>
       </div>
       <div class="flex w-full mb-2 bg-[#CCCCFD]">
         <%= label(f, :"return address", class: " w-[20%]") %>
@@ -369,7 +369,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :return_to_company) %>
-        <div class = "px-1">4310</div>
+        <div class="px-1">4310</div>
       </div>
       <div class="flex w-full mb-2 bg-[#CCCCFD]">
         <%= label(f, :"return to contact", class: "  w-[20%]") %>
@@ -379,7 +379,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :return_to_contact) %>
-        <div class = "px-1">4311</div>
+        <div class="px-1">4311</div>
       </div>
       <div class="flex w-full mb-2 bg-[#CCCCFD]">
         <%= label(f, :"return to address line 1", class: "  w-[20%]") %>
@@ -389,7 +389,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :return_to_address1) %>
-        <div class = "px-1">4312</div>
+        <div class="px-1">4312</div>
       </div>
       <div class="flex w-full mb-2 bg-[#CCCCFD]">
         <%= label(f, :"return to address line 2", class: "  w-[20%]") %>
@@ -399,7 +399,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :return_to_address2) %>
-        <div class = "px-1">4313</div>
+        <div class="px-1">4313</div>
       </div>
       <div class="flex w-full mb-2 bg-[#CCCCFD]">
         <%= label(f, :"return to suburb", class: "  w-[20%]") %>
@@ -409,7 +409,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :return_to_surburb) %>
-        <div class = "px-1">4314</div>
+        <div class="px-1">4314</div>
       </div>
       <div class="flex w-full mb-2 bg-[#CCCCFD]">
         <%= label(f, :"return to locality(Town/city)", class: "  w-[20%]") %>
@@ -419,7 +419,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :return_to_locality) %>
-        <div class = "px-1">4315</div>
+        <div class="px-1">4315</div>
       </div>
       <div class="flex w-full mb-2 bg-[#CCCCFD]">
         <%= label(f, :"return to region(state/county)", class: "  w-[20%]") %>
@@ -429,7 +429,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :return_to_region) %>
-        <div class = "px-1">4316</div>
+        <div class="px-1">4316</div>
       </div>
       <div class="flex w-full mb-2 bg-[#CCCCFD]">
         <%= label(f, :"return to country code", class: "  w-[20%]") %>
@@ -439,7 +439,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :return_to_country_code) %>
-        <div class = "px-1">4317</div>
+        <div class="px-1">4317</div>
       </div>
       <div class="flex w-full mb-2 bg-[#CCCCFD]">
         <%= label(f, :"return to postal_code", class: "  w-[20%]") %>
@@ -449,7 +449,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :return_to_postal_code) %>
-        <div class = "px-1">4318</div>
+        <div class="px-1">4318</div>
       </div>
       <div class="flex w-full mb-2 bg-[#CCCCFD]">
         <%= label(f, :"return to phone number", class: "  w-[20%]") %>
@@ -459,7 +459,7 @@
           style: "height:20px"
         ) %>
         <%= error_tag(f, :return_to_phone_number) %>
-        <div class = "px-1">4319</div>
+        <div class="px-1">4319</div>
       </div>
       <div class="flex w-full mb-2 bg-[#D9D9D9]">
         <%= label(f, :"logistic weight(kg)", class: "  w-[20%]") %>
@@ -469,7 +469,7 @@
           style: "height:20px"
         ) %>kg <%= error_tag(f, :logistic_weight) %>
         <div class="w-[45%]"></div>
-        <div class = "px-1">330n</div>
+        <div class="px-1">330n</div>
       </div>
       <div class="flex w-full mb-2 bg-[#D9D9D9]">
         <%= label(f, :"length of first dimension(m)", class: "  w-[20%]") %>
@@ -480,7 +480,7 @@
         ) %>m <%= error_tag(f, :length_first_dimension) %>
         <div class="w-[45%]"></div>
 
-        <div class = "px-1">331n</div>
+        <div class="px-1">331n</div>
       </div>
       <div class="flex w-full mb-2 bg-[#D9D9D9]">
         <%= label(f, :"width of second dimension(m)", class: "  w-[20%]") %>
@@ -491,7 +491,7 @@
         ) %>m <%= error_tag(f, :width_second_dimension) %>
         <div class="w-[45%]"></div>
 
-        <div class = "px-1">332n</div>
+        <div class="px-1">332n</div>
       </div>
       <div class="flex w-full mb-2 bg-[#D9D9D9]">
         <%= label(f, :"Depth,thickness, height(m)", class: "  w-[20%]") %>
@@ -502,7 +502,7 @@
         ) %>m <%= error_tag(f, :depth_thickness_height) %>
         <div class="w-[45%]"></div>
 
-        <div class = "px-1">333n</div>
+        <div class="px-1">333n</div>
       </div>
       <div class="flex w-full mb-2 bg-[#D9D9D9]">
         <%= label(f, :"logistic volume (cubic metres)", class: "  w-[20%]") %>
@@ -513,7 +513,7 @@
         ) %>m^3 <%= error_tag(f, :logistic_volume) %>
         <div class="w-[45%]"></div>
 
-        <div class = "px-1">336n</div>
+        <div class="px-1">336n</div>
       </div>
 
       <div>
@@ -526,7 +526,8 @@
 
     <div
       class="qrcode  whitespace-normal h-[7%] mb-2 text-sm border h break-words p-4 align-center overflow-y-auto "
-      id="qrtext"  phx-hook="qrcode"
+      id="qrtext"
+      phx-hook="qrcode"
     >
       <%= @url <>
         @prevalue <>
@@ -611,22 +612,18 @@
         @prevalue39 <> @logistic_volume %>
     </div>
 
-    <svg  id="qr" class=" h-[300px] w-[300px] ml-[25%] mt-[20%] ">
-    
-    </svg>
-    <%= if @ifset == 1  do%>
-  <button onclick = "downloadSVG()" class = "bg-gray-200 rounded p-2  text-sm text-black ml-[40%]"> download qrcode</button>
-  <%else %>
-  <div></div>
-  <%end %>
-
-
+    <svg id="qr" class=" h-[300px] w-[300px] ml-[25%] mt-[20%] "></svg>
+    <%= if @ifset == 1  do %>
+      <button onclick="downloadSVG()" class="bg-gray-200 rounded p-2  text-sm text-black ml-[40%]">
+        download qrcode
+      </button>
+    <% else %>
+      <div></div>
+    <% end %>
   </div>
-
-</div> 
+</div>
 
 <script>
-
   function downloadSVG() {
             var svg = document.getElementById("qr");
             var serializer = new XMLSerializer();
@@ -652,7 +649,4 @@
             document.body.removeChild(a); 
 
         }
-
-
- 
 </script>

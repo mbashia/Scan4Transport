@@ -37,7 +37,7 @@ defmodule Tester.Repo.Migrations.CreateScan4transports do
       add :return_to_company, :string
       add :return_to_contact, :string
 
-      ##corrections start here
+      ## corrections start here
       add :return_to_address1, :string
       add :return_to_address2, :string
       add :return_to_surburb, :string

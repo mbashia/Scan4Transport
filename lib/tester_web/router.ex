@@ -18,12 +18,7 @@ defmodule TesterWeb.Router do
     pipe_through(:browser)
 
     get("/", PageController, :index)
-    live("/posts", PostLive.Index, :index)
-    live("/posts/new", PostLive.Index, :new)
-    live("/posts/:id/edit", PostLive.Index, :edit)
 
-    live("/posts/:id", PostLive.Show, :show)
-    live("/posts/:id/show/edit", PostLive.Show, :edit)
     live("/scans", ScanLive.Index, :index)
   end
 
